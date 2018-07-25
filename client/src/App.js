@@ -53,17 +53,6 @@ class App extends Component {
     
     async componentDidMount() {
         await this.updateProjects()
-        return
-        
-        // eslint-disable-next-line
-        let count = 0
-        setInterval(() => {
-            const body = document.querySelector('body')
-            count += 1
-            count = count % 360
-            
-            body.style.backgroundImage = `linear-gradient(${336 /* + count */}deg, hsl(${count}, 83%, 10%), black)`
-        }, 70)
     }
     
     updateProjects = async () => {

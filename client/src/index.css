@@ -51,14 +51,11 @@ body {
   color: white;
   background-color: black;
   min-height: 100vh;
-  /* background-image: linear-gradient(336deg, hsl(0, 83%, 10%), black); */
 }
 
 a {
   text-decoration: none;
   color: yellow;
-  /* text-transform: uppercase; */
-  /* font-size: 0.9em; */
 }
 
 a:hover, a:active, a:focus {
