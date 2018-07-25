@@ -147,7 +147,6 @@ class App extends Component {
     
     moveProjectUp = async (event, shortId) => {
         event.preventDefault()
-        console.log('Move up ' + shortId)
         
         const movement = await fetch('/api/project/move-up/?shortId=' + shortId, {
             method: 'PUT',
@@ -161,7 +160,6 @@ class App extends Component {
     
     moveProjectDown = async (event, shortId) => {
         event.preventDefault()
-        console.log('Move down ' + shortId)
         
         const movement = await fetch('/api/project/move-down/?shortId=' + shortId, {
             method: 'PUT',
