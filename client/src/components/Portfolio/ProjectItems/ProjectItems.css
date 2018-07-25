@@ -1,0 +1,21 @@
+.ProjectItemsColumn {
+    padding-left: 0
+}
+
+@media (max-width: 768px) {
+    .ProjectItemsColumn {
+        padding: 0
+    }
+    
+    .ProjectItems {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}
+
+.ProjectItems {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 50px;
+    position: sticky;
+}

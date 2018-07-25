@@ -1,0 +1,46 @@
+.ProjectTag {
+    border-radius: 100px;
+    box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white;
+    padding: 4px 9px 4px 9px;
+    /* padding-top: 1px; */
+    text-transform: uppercase;
+    margin: 5px;
+    float: none;
+    display: inline-block;
+    font-size: 0.8em;
+    transform: translateZ(0);
+    background-color: transparent;
+    
+    transition: color 250ms ease-in-out,
+        background-color 250ms ease-in-out,
+        border-color 250ms ease-in-out,
+        opacity 250ms ease-in-out;
+}
+
+.ProjectTag + .ProjectTag {
+    /* margin-left: 5px */
+}
+
+.ProjectTag.selected {
+    /* color: green; */
+}
+
+.ProjectTag.disabled {
+    cursor: default;
+    pointer-events: none;
+    /* opacity: 0.4; */
+    /* border-style: dashed; */
+    
+    color: rgba(255, 255, 255, 0.6) !important;
+    border: 1px dashed rgba(255, 255, 255, 0.6) !important;
+    background-color: transparent;
+}
+
+.ProjectTag.previewing {
+    border-color: white !important;
+    color: white !important;
+}
+
+.ProjectTag.notPreviewing {
+    opacity: 0.3;
+}

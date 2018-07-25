@@ -1,0 +1,17 @@
+.ProjectItemsAddBtn {
+    border: 1px solid;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ProjectItemsAddBtn a {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 6px 0px;
+}

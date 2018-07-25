@@ -1,0 +1,25 @@
+.ProjectItemAdminActions {
+    margin-right: 5px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+}
+
+.ProjectItemAdminActions > * {
+    color: white;
+    background: black;
+    border: 1px solid;
+}
+.ProjectItemAdminActions > * + * {
+    margin-left: 2px
+}
+
+.ProjectItemAdminActions > *:hover {
+    color: black;
+    background: white;
+}
+
+.ProjectItemAdminActions .active {
+    color: black;
+    background: white;
+}

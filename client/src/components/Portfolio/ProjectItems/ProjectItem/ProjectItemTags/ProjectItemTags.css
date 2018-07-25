@@ -1,0 +1,16 @@
+.ProjectItemTags {
+    position: absolute;
+    /* right: 15px; */
+    font-family: Times;
+    letter-spacing: initial;
+    
+    left: 11px;
+    right: 0;
+    bottom: -16px
+}
+
+@media (max-width : 768px) {
+    .ProjectItemTags {
+        left: 0px;
+    }
+}

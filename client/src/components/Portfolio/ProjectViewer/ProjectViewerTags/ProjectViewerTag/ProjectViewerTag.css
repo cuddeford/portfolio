@@ -1,0 +1,17 @@
+.ProjectViewerTag {
+    background-color: transparent;
+    padding: 5px;
+    display: inline-block;
+    font-size: 1em;
+    
+    transition: transform 300ms ease-in-out;
+}
+
+.ProjectViewerTag + .ProjectViewerTag {
+    margin-left: 5px
+}
+    
+.ProjectViewerTag.matched {
+    /* font-weight: bold; */
+    transform: scale(1.1);
+}

@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-markdown": "^3.3.4",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "react-transition-group": "^2.4.0",
+    "smoothscroll-polyfill": "^0.4.3"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build && rm -r ../server/build && cp -rp build ../server",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:8080",
+  "devDependencies": {
+    "babel-plugin-transform-react-pug": "^6.0.0",
+    "react-app-rewire-eslint": "^0.2.3",
+    "react-app-rewired": "^1.5.2"
+  }
+}

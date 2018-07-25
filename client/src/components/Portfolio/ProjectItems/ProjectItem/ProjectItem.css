@@ -1,0 +1,105 @@
+.ProjectItem {
+    font-family: Futura;
+    font-size: 1.4em;
+    pointer-events: none;
+    margin-bottom: 4px;
+    max-height: 0;
+    border-radius: 0px;
+    border: none;
+    transform: translateZ(0);
+    filter: blur(5px);
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    transition: max-height 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        border-width 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        border-radius 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        padding 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        margin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        opacity 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        filter 0.5s ease-in-out 0.2s,
+        color 0.1s ease-in-out,
+        background 0.1s ease-in-out;
+}
+
+.ProjectItem:hover,
+.ProjectItem:active {
+    /* background: white; */
+}
+
+.ProjectItem.private {
+
+}
+
+.ProjectItem > a {
+    text-align: left;
+    font-weight: bold;
+    font-stretch: condensed;
+    letter-spacing: 1.5px;
+    font-size: inherit;
+    padding: 0;
+    max-height: 0;
+    border: none;
+    color: white;
+    border-radius: 0;
+    transition: padding 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        max-height 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        color 100ms ease-in-out,
+        background 100ms ease-in-out
+}
+
+.ProjectItem > a:hover,
+.ProjectItem > a:active,
+.ProjectItem > a:focus,
+.ProjectItem > a.active {
+    background: white;
+    color: black;
+    box-shadow: none;
+}
+
+.ProjectItem.matched > a {
+    padding: 6px 12px;
+    max-height: 200px;
+}
+
+.ProjectItem + .ProjectItem {
+    margin-top: 0px;
+    margin: 0;
+}
+
+.ProjectItem.matched + .ProjectItem {
+    margin-top: 15px;
+}
+
+.ProjectItem.matched {
+    pointer-events: initial;
+    font-size: 1.4em;
+    max-height: 200px;
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+    color: white;
+    border: none;
+    filter: blur(0px);
+    transition: max-height 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        border-width 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        border-radius 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        padding 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        margin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        opacity 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        filter 500ms ease-in-out 0.3s,
+        color 0.1s ease-in-out,
+        background 0s ease-in-out;
+}
+
+.ProjectItemName {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+@media (max-width : 768px) {
+    .ProjectItem a {
+        text-align: center;
+        text-transform: uppercase
+    }
+}

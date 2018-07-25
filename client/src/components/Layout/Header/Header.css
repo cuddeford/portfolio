@@ -1,0 +1,199 @@
+.App-header {
+    background: none;
+    padding: 30px 0 20px 0;
+    color: white;
+    margin-bottom: 5px
+}
+
+.App-header nav {
+    position: absolute;
+    top: 32px;
+    width: 100%;
+    left: 0;
+    height: 0;
+    font-size: 0.3em;
+    text-transform: lowercase;
+    text-shadow: 0px 3px 5px #000000,
+        0px 4px 10px #000000,
+        0px 5px 20px rgba(0, 0, 0, 1);
+    font-weight: normal;
+    letter-spacing: initial;
+}
+
+.App-title {
+    font-size: 1.5em;
+}
+
+#Header {
+    text-align: center;
+}
+
+#App-title {
+    margin: 0;
+    font-family: 'Futura';
+    
+    /* background: url("https://scontent-lga3-1.cdninstagram.com/vp/ae5f74aa5ea3bdf87d5463af6f4e592a/5BCDA6C1/t51.2885-15/e15/11191172_1429366180699904_842608976_n.jpg?dl=1") center; */
+    /* -webkit-background-clip: text; */
+    /* color: transparent; */
+    font-size: 5em;
+    text-transform: uppercase;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    display: inline-block;
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: relative;
+    transform: translateZ(0);
+}
+
+.Header-content {
+    background: url("https://scontent-lga3-1.cdninstagram.com/vp/ae5f74aa5ea3bdf87d5463af6f4e592a/5BCDA6C1/t51.2885-15/e15/11191172_1429366180699904_842608976_n.jpg?dl=1") center;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    display: inline-block;
+    transform: translateY(0) scale(1);
+    
+    transition: opacity 2000ms ease-in-out,
+        filter 2000ms ease-in-out,
+        transform 2000ms ease-in-out;
+    /* transition: color 2000ms cubic-bezier(1, -0.03, 0.71, 0.96); */
+}
+
+.Header-content.change-in {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0) scale(1)
+}
+
+.Header-content.change-out {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(-10px) scale(0.95)
+}
+
+.PortfolioLink {
+    right: 383px
+}
+
+.ContactLink {
+    left: 383px
+}
+
+@media (min-width: 768px) {
+    .App-header nav {
+        top: 28px;
+    }
+    
+    .PortfolioLink {
+        font-size: 1.2em;
+    }
+
+    .ContactLink {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    #App-title {
+        font-size: 4em
+    }
+    
+    .App-header nav {
+        top: 23px;
+    }
+    
+    .PortfolioLink {
+        right: 341px;
+        font-size: 1.3em;
+    }
+
+    .ContactLink {
+        left: 341px;
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 520px) {
+    #App-title {
+        font-size: 3.5em
+    }
+    
+    .App-header nav {
+        top: 19px;
+    }
+    
+    .PortfolioLink {
+        right: 300px
+    }
+
+    .ContactLink {
+        left: 300px
+    }
+}
+
+@media (max-width: 420px) {
+    #App-title {
+        font-size: 3em
+    }
+    
+    .App-header nav {
+        top: 17px;
+    }
+    
+    .PortfolioLink {
+        right: 257px;
+        font-size: 1.3em;
+    }
+
+    .ContactLink {
+        left: 257px;
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 320px) {
+    #App-title {
+        font-size: 2.5em
+    }
+    
+    .App-header nav {
+        top: 17px;
+    }
+    
+    .PortfolioLink {
+        right: 208px;
+        font-size: 1.5em;
+    }
+
+    .ContactLink {
+        left: 208px;
+        font-size: 1.5em;
+    }
+}
+
+.HeaderNav {
+    list-style: none;
+    padding: 0;
+}
+
+.HeaderNavItem {
+    display: inline-block;
+    position: absolute;
+}
+
+.HeaderNavItem a {
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-family: Spirax;
+    
+    transition: color 200ms ease-in-out
+}
+
+.HeaderNavItem a:hover {
+    color: rgba(255, 255, 255, 0.801)
+}
