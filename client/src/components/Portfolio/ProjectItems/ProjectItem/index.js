@@ -25,16 +25,16 @@ const projectItem = props => {
                 
                 <span className="ProjectItemName">{project.name}</span>
                 
-                {/* {props.admin */}
-                    <ProjectItemAdminActions
+                {props.admin
+                    ? <ProjectItemAdminActions
                         shortId={project.shortId}
                         public={project.public}
                         togglePublic={e => props.togglePublic(e, project.shortId)}
                         moveProjectUp={e => props.moveProjectUp(e, project.shortId)}
                         moveProjectDown={e => props.moveProjectDown(e, project.shortId)}
                         deleteProject={e => props.deleteProject(e, project.shortId)}
-                    />
-                    {/*  : null */}
+                      />
+                    : null}
                 
                 <ProjectItemTags
                     tags={project.tags}
