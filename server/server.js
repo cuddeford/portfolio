@@ -14,7 +14,7 @@ const User = require('./models/user')
 const app = express()
 const port = process.env.PORT || 8080
 
-app.use(logger('dev'))
+app.use(logger(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'))
 
 app.use(bodyParser.json())
 
