@@ -36,7 +36,6 @@ class App extends Component {
         saturation: '100%',
         brightness: '60%',
         loading: true,
-        admin: true,
         admin: false
     }
     
