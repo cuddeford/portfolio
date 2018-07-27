@@ -21,10 +21,13 @@ class ProjectTag extends Component {
     setHovering = () => this.setState({ hovering: true })
     unsetHovering = () => this.setState({ hovering: false })
     
-    style = tag => {
+    style = () => {
+        const hue = this.state.colour.replace('hsla(', '').split(', ')[0]
+        const isLightColour = hue > 45 && hue < 170
+        
         if (this.state.selected) {
             return {
-                color: 'white',
+                color: isLightColour ? 'black' : 'white',
                 borderColor: this.state.colour,
                 backgroundColor: this.state.colour
             }
@@ -38,8 +41,7 @@ class ProjectTag extends Component {
             }
             : {
                 color: this.state.colour,
-                borderColor: this.state.colour,
-                
+                borderColor: this.state.colour
             }
     }
     
@@ -52,7 +54,7 @@ class ProjectTag extends Component {
                 onClick={e => this.props.selectTagHandler(e, tag)}
                 onMouseEnter={this.setHovering}
                 onMouseLeave={this.unsetHovering}
-                style={this.style(tag)}>
+                style={this.style()}>
                 {tag}
             </li>
         )
