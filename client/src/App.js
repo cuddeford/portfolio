@@ -86,7 +86,7 @@ class App extends Component {
     
     addTag = newTag => {
         if (this.state.tags.find(tag => tag.tag.toLowerCase() === newTag.toLowerCase()))
-            return alert('This tag already exists'), false
+            return (alert('This tag already exists'), false)
                 
         this.setState(prevState => {
             prevState.tags.push({
@@ -208,7 +208,7 @@ class App extends Component {
             await this.updateProjects()
     }
     
-    setAdmin = value => (this.setState({ admin: value }), this.updateProjects())
+    setAdmin = value => ((this.setState({ admin: value }), this.updateProjects()))
     
     PrivateRoute = ({ ...rest }) => this.state.admin
         ? <Route {...rest} />
