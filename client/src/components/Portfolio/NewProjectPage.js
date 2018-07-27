@@ -6,7 +6,8 @@ import Page from '../Page'
 class NewProjectPage extends Component {
     state = {
         projectCreated: false,
-        createdProjectSlug: null
+        createdProjectSlug: null,
+        tags: []
     }
     
     submitNewProject = async e => {
@@ -17,7 +18,7 @@ class NewProjectPage extends Component {
         var object = {};
         formData.forEach((value, key) => object[key] = value)
         
-        object.tags = object.tags ? object.tags.split(/\s?[, ]\s?/) : []
+        object.tags = object.tags ? object.tags.split(', ') : []
         object.public = !!object.public
         
         if (!object.name) return console.log('Name is required')
@@ -44,6 +45,35 @@ class NewProjectPage extends Component {
         }
     }
     
+    toggleTag = tag => {
+        this.setState(prevState => {
+            prevState.tags.includes(tag)
+                ? prevState.tags = prevState.tags.filter(t => t !== tag)
+                : prevState.tags.push(tag)
+
+            return { tags: prevState.tags }
+        })
+    }
+    
+    addNewTagKeyPress = event => {
+        if (event.key !== 'Enter')
+            return
+
+        event.preventDefault()
+
+        const tag = event.target.value.toLowerCase().trim()
+        if (!tag) return
+
+        if (this.props.addTag(tag)) {
+            this.setState(prevState => {
+                prevState.tags.push(tag)
+                return { tags: prevState.tags }
+            })
+        }
+
+        event.target.value = ''
+    }
+    
     render() {
         if (this.state.projectCreated === true) {
             return <Redirect to={'/portfolio/#' + this.state.createdProjectSlug} />
@@ -61,7 +91,43 @@ class NewProjectPage extends Component {
                     letterSpacing: '2px'
                 }} name='name' placeholder='Name' />
                 
-                <input type='text' name='tags' placeholder='Tags' />
+                <input type='hidden' style={{
+                    textAlign: 'center'
+                }} name='tags' placeholder='Tags' readOnly value={this.state.tags.join(', ')} />
+                
+                <div style={{ textAlign: 'center' }}>
+                    {this.props.state.tags.map(tag => {
+                        const hue = tag.colour.replace('hsla(', '').split(', ')[0]
+                        return (
+                            <span
+                                key={tag.tag}
+                                className="EditProjectFormTag"
+                                style={{
+                                    background: this.state.tags.includes(tag.tag)
+                                        ? tag.colour
+                                        : 'transparent',
+                                    color: this.state.tags.includes(tag.tag)
+                                        ? hue > 45 && hue < 170
+                                            ? 'black'
+                                            : 'white'
+                                        : tag.colour,
+                                    border: '1.5px solid ' + tag.colour,
+                                }}
+                                onClick={() => this.toggleTag(tag.tag)} >
+                                {tag.tag}
+                            </span>
+                        )
+                    })}
+
+                    <span className="EditProjectFormTag EditProjectFormNewTag" >
+                        <input
+                            type="text"
+                            placeholder="New Tag"
+                            onKeyPress={this.addNewTagKeyPress}
+                        />
+                    </span>
+                </div>
+                
                 <br />
                 <textarea name='description' placeholder='Description' />
                 <br />

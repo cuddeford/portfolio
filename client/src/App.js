@@ -71,7 +71,10 @@ class App extends Component {
         
         // Grab all the tags from the projects and remove duplicates
         const tags = [...new Set(this.state.projects.map(p => p.tags.join(', ')).join(', ').split(', '))]
-        const allTags = tags.map((tag, index) => ({ tag, colour: `hsla(${(360 / tags.length) * index}, ${this.state.saturation}, ${this.state.brightness}, 1)` }))
+        const allTags = tags.map((tag, index) => ({
+            tag,
+            colour: `hsla(${(360 / tags.length) * index}, ${this.state.saturation}, ${this.state.brightness}, 1)`
+        }))
         
         if (!firstTime) return this.setState({ tags: allTags })
         
@@ -79,6 +82,21 @@ class App extends Component {
             tags: allTags,
             possibleTags: tags
         })
+    }
+    
+    addTag = newTag => {
+        if (this.state.tags.find(tag => tag.tag.toLowerCase() === newTag.toLowerCase()))
+            return alert('This tag already exists'), false
+                
+        this.setState(prevState => {
+            prevState.tags.push({
+                tag: newTag,
+                colour: `hsla(360, ${this.state.saturation}, ${this.state.brightness}, 1)`
+            })
+            return { tags: prevState.tags }
+        })
+        
+        return true
     }
     
     selectTag = (event, tag) => {
@@ -228,6 +246,7 @@ class App extends Component {
                             path='/portfolio/add'
                             render={() => <NewProjectPage
                                 state={this.state}
+                                addTag={this.addTag}
                                 updateProjects={this.updateProjects} />}
                         />
                         
@@ -237,6 +256,7 @@ class App extends Component {
                             render={({ location }) => <EditProjectPage
                                 location={location}
                                 state={this.state}
+                                addTag={this.addTag}
                                 updateProjects={this.updateProjects} />}
                         />
                         

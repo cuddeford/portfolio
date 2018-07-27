@@ -8,7 +8,14 @@ import './EditProjectPage.css'
 class EditProjectPage extends Component {
     state = {
         shortId: '',
-        projectEdited: false
+        projectEdited: false,
+        tags: [],
+        firstLoad: true,
+        project: null
+    }
+    
+    componentWillMount() {
+        this.initShortId()
     }
     
     componentDidMount() {
@@ -16,16 +23,34 @@ class EditProjectPage extends Component {
     }
     
     componentDidUpdate() {
+        this.initShortId()
         this.initState()
     }
     
-    initState = () => {
+    initShortId = () => {
         const params = new URLSearchParams(this.props.location.search)
         const shortId = params.get('shortId')
         
         if (this.state.shortId === shortId) return
         
         this.setState({ shortId })
+    }
+    
+    initState = () => {
+        if (!this.state.firstLoad)
+            return
+
+        if (!this.state.project) {
+            if (this.props.state.projects.length <= 0)
+                return
+
+            const project = this.props.state.projects.find(p => p.shortId === this.state.shortId)
+            this.setState({
+                project,
+                tags: project.tags,
+                firstLoad: false
+            })
+        }
     }
     
     submitEditedProject = async e => {
@@ -36,7 +61,7 @@ class EditProjectPage extends Component {
         var object = {};
         formData.forEach((value, key) => object[key] = value)
 
-        object.tags = object.tags ? object.tags.split(/\s?[, ]\s?/) : []
+        object.tags = object.tags ? object.tags.split(', ') : []
         object.public = !!object.public
 
         if (!object.name) return console.log('Name is required')
@@ -61,9 +86,38 @@ class EditProjectPage extends Component {
             this.setState({ projectEdited: true })
         }
     }
+    
+    toggleTag = tag => {
+        this.setState(prevState => {
+            prevState.tags.includes(tag)
+                ? prevState.tags = prevState.tags.filter(t => t !== tag)
+                : prevState.tags.push(tag)
+            
+            return { tags: prevState.tags }
+        })
+    }
+    
+    addNewTagKeyPress = event => {
+        if (event.key !== 'Enter')
+            return
+            
+        event.preventDefault()
+        
+        const tag = event.target.value.toLowerCase().trim()
+        if (!tag) return
+        
+        if (this.props.addTag(tag)) {
+            this.setState(prevState => {
+                prevState.tags.push(tag)
+                return { tags: prevState.tags }
+            })
+        }
+        
+        event.target.value = ''
+    }
 
     render() {
-        const project = this.props.state.projects.find(p => p.shortId === this.state.shortId)
+        const { project } = this.state
         
         if (this.state.projectEdited === true) {
             return <Redirect to={'/portfolio/#' + project.slug} />
@@ -81,9 +135,44 @@ class EditProjectPage extends Component {
                     letterSpacing: '2px'
                 }} name='name' placeholder='Name' defaultValue={project.name} />
                 
-                <input type='text' style={{
+                <input type='hidden' style={{
                     textAlign: 'center'
-                }} name='tags' placeholder='Tags' defaultValue={project.tags.join(', ')} />
+                }} name='tags' placeholder='Tags' readOnly value={this.state.tags.join(', ')} />
+                
+                <div style={{ textAlign: 'center' }}>
+                    {this.props.state.tags.map(tag => {
+                        const hue = tag.colour.replace('hsla(', '').split(', ')[0]
+                        return (
+                            <span
+                                key={tag.tag}
+                                className="EditProjectFormTag"
+                                style={{
+                                    background: this.state.tags.includes(tag.tag)
+                                        ? tag.colour
+                                        : 'transparent',
+                                    color: this.state.tags.includes(tag.tag)
+                                        ? hue > 45 && hue < 170
+                                            ? 'black'
+                                            : 'white'
+                                        : tag.colour,
+                                    border: '1.5px solid ' + tag.colour,
+                                }}
+                                onClick={() => this.toggleTag(tag.tag)} >
+                                {tag.tag}
+                            </span>
+                        )
+                    })}
+                    
+                    <span className="EditProjectFormTag EditProjectFormNewTag" >
+                        <input
+                            type="text"
+                            placeholder="New Tag"
+                            onKeyPress={this.addNewTagKeyPress}
+                        />
+                    </span>
+                </div>
+                
+                <br />
                 <br />
                 <textarea name='description' placeholder='Description' defaultValue={project.description} />
                 <br />
