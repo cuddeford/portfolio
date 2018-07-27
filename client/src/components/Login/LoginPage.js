@@ -27,17 +27,19 @@ const loginPage = props => {
 
         const attempt = await login.json()
         
-        if (attempt.success) {
-            return props.setAdmin(true), props.history.push('/')
-        } else
-            alert(attempt.error)
+        return attempt.success
+            ? (props.setAdmin(true), props.history.push('/'))
+            : alert(attempt.error)
     }
     
     const content = (
         <form method="POST" onSubmit={submitForm}>
+            <h2 style={{ textAlign: 'center' }}>Login</h2>
+            <br />
             <input type="text" placeholder="Username" name="username" />
             <input type="password" placeholder="Password" name="password" />
-            <button className="btn btn-default">Log in</button>
+            <br />
+            <button type="submit" className="btn btn-default">Log in</button>
         </form>
     )
     

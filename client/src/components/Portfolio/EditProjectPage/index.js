@@ -71,15 +71,31 @@ class EditProjectPage extends Component {
         
         const content = project ? (
             <form id='projectForm' onSubmit={this.submitEditedProject}>
-                <input type='text' name='name' placeholder='Name' defaultValue={project.name} />
                 <br />
-                <input type='text' name='tags' placeholder='Tags' defaultValue={project.tags.join(', ')} />
+                
+                <input type='text' style={{
+                    textAlign: 'center',
+                    fontSize: '1.5em',
+                    textTransform: 'uppercase',
+                    fontWeight: 'bold',
+                    letterSpacing: '2px'
+                }} name='name' placeholder='Name' defaultValue={project.name} />
+                
+                <input type='text' style={{
+                    textAlign: 'center'
+                }} name='tags' placeholder='Tags' defaultValue={project.tags.join(', ')} />
                 <br />
                 <textarea name='description' placeholder='Description' defaultValue={project.description} />
                 <br />
-                <input type='checkbox' name='public' defaultChecked={project.public} />
+                
+                <div style={{ textAlign: 'center' }}>
+                    <label>Public
+                        <input type='checkbox' name='public' style={{ marginLeft: 5 }} defaultChecked={project.public} />
+                    </label>
+                </div>
+                
                 <br />
-                <button type='submit'>Submit</button>
+                <button className="btn btn-default" type='submit'>Submit</button>
             </form>
         ) : 'Invalid project'
 

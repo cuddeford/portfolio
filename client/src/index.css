@@ -67,6 +67,68 @@ input, textarea {
   color: black;
 }
 
+input[type=text],
+input[type=password] {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  color: white;
+  background: black;
+  border: none;
+  width: 100%;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  transition: border-color 300ms ease-in-out
+}
+
+input[type=text]:active,
+input[type=text]:focus,
+input[type=password]:active,
+input[type=password]:focus {
+  border-bottom-color: white;
+  outline: none;
+}
+
+textarea {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  color: white;
+  background: black;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  transition: border-color 300ms ease-in-out;
+}
+
+textarea:active,
+textarea:focus {
+  border-bottom-color: white;
+  outline: none;
+}
+
+button[type=submit] {
+  display: block;
+  margin: 0 auto;
+  text-transform: uppercase;
+  color: white;
+  background: transparent;
+  border-radius: 0;
+  border-width: 2px;
+  transition: color 100ms ease-in-out,
+    background 100ms ease-in-out,
+    border-color 100ms ease-in-out
+}
+
+button[type=submit]:hover,
+button[type=submit]:active,
+button[type=submit]:focus {
+  color: black;
+  background: white;
+  border-color: white;
+}
+
 #root {
   font-size: 1.2em;
 }
