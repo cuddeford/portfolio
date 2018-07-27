@@ -29,27 +29,15 @@
     hyphens: auto;
     /* column-count: 2; */
 }
-
-/* @supports (initial-letter: 4) or (-webkit-initial-letter: 4) {
-    .ProjectViewer .ProjectDescription p:first-child::first-letter {
-        font-family: Spirax;
-        padding-right: 6px;
-        initial-letter: 2;
-        -webkit-initial-letter: 2;
-    }
-} */
-
-/* @supports not ((initial-letter: 4) or (-webkit-initial-letter: 4)) { */
-    .ProjectViewer .ProjectDescription p:first-child::first-letter {
-        font-weight: normal;
-        font-size: 3.3em;
-        float: left;
-        line-height: initial;
-        font-family: 'Spirax';
-        margin: -5px 15px -20px 1px;
-        font-style: italic;
-    }
-/* } */
+.ProjectViewer .ProjectDescription p:first-child::first-letter {
+    font-weight: normal;
+    font-size: 3.3em;
+    float: left;
+    line-height: initial;
+    font-family: 'Spirax';
+    margin: -5px 15px -20px 1px;
+    font-style: italic;
+}
 
 .ProjectViewer a:not(.CustomLink) {
     text-decoration: none;
@@ -82,14 +70,14 @@
     background-size: 100% 3px;
 }
 
-.ProjectViewer divider {
+divider {
     height: 1px;
     margin: 50px 0 100px 0;
     column-span: all;
     display: block;
 }
     
-.ProjectViewer divider::before {
+divider::before {
     content: '&';
     text-align: center;
     font-size: 1.7em;
@@ -104,7 +92,7 @@
     opacity: 0.7;
 }
 
-.ProjectViewer .CustomLink {
+.CustomLink {
     text-align: center;
     display: block;
     font-size: 1.2em;
@@ -124,7 +112,7 @@
         border-color 100ms ease-in-out;
 }
 
-.ProjectViewer .CustomLink:hover {
+.CustomLink:hover {
     border-color: white;
     background-color: white;
     color: black;

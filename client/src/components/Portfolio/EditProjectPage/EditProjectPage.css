@@ -45,3 +45,17 @@
     text-transform: uppercase;
     border: 0;
 }
+
+#projectForm .TextAreaPreviewText {
+    text-align: center;
+    padding-top: 5px;
+    font-style: italic;
+    text-transform: uppercase;
+    font-stretch: condensed;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+#projectForm .TextAreaPreview img {
+    max-width: 100%
+}

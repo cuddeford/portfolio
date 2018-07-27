@@ -3,11 +3,14 @@ import { Redirect } from 'react-router-dom'
 
 import Page from '../Page'
 
+import Markdown from 'react-markdown'
+
 class NewProjectPage extends Component {
     state = {
         projectCreated: false,
         createdProjectSlug: null,
-        tags: []
+        tags: [],
+        description: 'An _exciting_ description\n\n<divider />'
     }
     
     submitNewProject = async e => {
@@ -74,6 +77,84 @@ class NewProjectPage extends Component {
         event.target.value = ''
     }
     
+    descriptionKeyPress = e => {
+        const activeEl = document.activeElement
+        const start = activeEl.selectionStart
+        const end = activeEl.selectionEnd
+
+        const wrap = chars => {
+            if (start === end) return
+
+            let enabling = false
+            this.setState(prevState => {
+                const selection = prevState.description.slice(start, start + (end - start))
+
+                if (selection.startsWith(chars) && selection.endsWith(chars)) {
+                    enabling = false
+                    prevState.description = [
+                        prevState.description.slice(0, start),
+                        selection.slice(chars.length, selection.length - chars.length),
+                        prevState.description.slice(end)
+                    ].join('')
+                } else {
+                    enabling = true
+                    prevState.description = [
+                        prevState.description.slice(0, start),
+                        chars,
+                        selection,
+                        chars,
+                        prevState.description.slice(end)
+                    ].join('')
+                }
+
+                return {
+                    description: prevState.description
+                }
+            }, () => enabling
+                ? activeEl.setSelectionRange(start, end + (chars.length * 2))
+                : activeEl.setSelectionRange(start, end - (chars.length * 2))
+            )
+        }
+
+        if (e.metaKey && e.which === 98) {
+
+            // If pressing Cmd+b, make bold
+            wrap('**')
+        } else if (e.metaKey && e.which === 105) {
+            e.preventDefault()
+
+            // If pressing Cmd+i, make italic
+            wrap('_')
+        } else if (e.shiftKey && e.metaKey && e.which === 103) {
+            e.preventDefault()
+
+            // If pressing Shift+Cmd+g, make code block
+            wrap('\n```\n')
+        } else if (e.metaKey && e.which === 103) {
+            e.preventDefault()
+
+            // If pressing Cmd+g, make inline code block
+            wrap('`')
+        } else if (e.shiftKey && e.metaKey && e.which === 107) {
+
+            // If pressing Shift+Cmd+k, delete line
+            const firstChunk = this.state.description.slice(0, start)
+            const secondChunk = this.state.description.slice(start)
+
+            const sliceFrom = firstChunk.lastIndexOf('\n') + 1
+            const sliceTo = start + secondChunk.indexOf('\n') + 1
+
+            this.setState(prevState => ({
+                description: [
+                    prevState.description.slice(0, sliceFrom),
+                    prevState.description.slice(sliceTo)
+                ].join('')
+            }), () => activeEl.setSelectionRange(sliceFrom, sliceFrom))
+        }
+    }
+
+    descriptionOnChange = e => this.setState({ description: e.target.value })
+    
     render() {
         if (this.state.projectCreated === true) {
             return <Redirect to={'/portfolio/#' + this.state.createdProjectSlug} />
@@ -129,7 +210,25 @@ class NewProjectPage extends Component {
                 </div>
                 
                 <br />
-                <textarea name='description' placeholder='Description' />
+                
+                <div className="row">
+                    <div className="col-xs-12 col-md-6">
+                        <textarea
+                            name='description'
+                            placeholder='Description'
+                            value={this.state.description}
+                            onKeyPress={this.descriptionKeyPress}
+                            onChange={this.descriptionOnChange} />
+                    </div>
+                    <div className="col-xs-12 col-md-6 TextAreaPreview">
+                        <h3 className="visible-xs visible-sm TextAreaPreviewText">Preview</h3>
+                        <Markdown
+                            escapeHtml={false}
+                            source={this.state.description}
+                        />
+                    </div>
+                </div>
+                
                 <br />
                 <div style={{ textAlign: 'center' }}>
                     <label>Public
