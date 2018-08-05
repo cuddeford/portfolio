@@ -17,7 +17,7 @@ const ContactPage = props => {
                 
                 You can find my CV here:
                 <br />
-                <a href="/files/LucioCuddeford-CV.pdf">
+                <a download href="/files/LucioCuddeford-CV.pdf">
                     <i className="fas fa-briefcase"></i> CV
                 </a>
                 <br />

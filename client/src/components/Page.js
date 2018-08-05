@@ -16,6 +16,9 @@ class Page extends Component {
     }
 
     render() {
+        if (this.props.children)
+            return this.props.children
+        
         return (
             <div className="row">
                 <div className="col-xs-12">

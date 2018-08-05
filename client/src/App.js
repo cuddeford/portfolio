@@ -15,7 +15,7 @@ import NewProjectPage from './components/Portfolio/NewProjectPage'
 import EditProjectPage from './components/Portfolio/EditProjectPage/'
 
 import ContactPage from './components/Contact/ContactPage'
-import CVPage from './components/Contact/CVPage'
+import CVPage from './components/CV/CVPage'
 
 import LoginPage from './components/Login/LoginPage'
 import RegisterPage from './components/Register/RegisterPage'
@@ -36,7 +36,8 @@ class App extends Component {
         saturation: '100%',
         brightness: '60%',
         loading: true,
-        admin: false
+        admin: false,
+        showLayout: true
     }
     
     async componentWillMount() {
@@ -214,11 +215,14 @@ class App extends Component {
         ? <Route {...rest} />
         : <Redirect to='/' />
     
+    toggleLayout = value => this.setState({ showLayout: value })
+    
     render() {
         return (
             <Router>
                 <Layout
                     admin={this.state.admin}
+                    showLayout={this.state.showLayout}
                     changingProject={this.state.changingProject} >
                     <Switch>
                         <Route
@@ -297,11 +301,12 @@ class App extends Component {
                                 state={this.state} />}
                         />
                         
-                        <Route
+                        <this.PrivateRoute
                             exact
                             path='/cv'
                             render={() => <CVPage
-                                state={this.state} />}
+                                state={this.state}
+                                toggleLayout={this.toggleLayout} />}
                         />
                         
                         <Redirect exact from='/' to='/portfolio' />
