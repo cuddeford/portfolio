@@ -21,62 +21,62 @@ class CVPage extends Component {
                         <div className="row">
                             <div className="col-xs-12 col-sm-4 CVSidebar">
                                 <a href="/files/LucioCuddeford-CV.pdf" className="downloadLink" target="_blank" title="Download" download="" style={{
-                                    'z-index': 1000,
+                                    'zIndex': 1000,
                                     'position': 'relative',
                                     'float': 'left',
-                                    'margin-right': '-50px',
-                                    'margin-bottom': '-50px',
-                                    'font-size': '14pt'
+                                    'marginRight': '-50px',
+                                    'marginBottom': '-50px',
+                                    'fontSize': '14pt'
                                 }}>
-                                    <div class="download fa fa-download"></div>
+                                    <div className="download fa fa-download"></div>
                                 </a>
                                 
                                 <img src="/images/face.jpg" />
                                 <h1 style={{ fontWeight: 'bold' }}>Lucio Cuddeford</h1>
                                 <h3 style={{ marginTop: -5, marginBottom: 30, fontFamily: 'Playfair Display', transform: 'skewX(-15deg)' }}>Programmer & Artist</h3>
                                 
-                                <ul class="list-unstyled contactList">
+                                <ul className="list-unstyled contactList">
                                     <li>
-                                        <i class="fa fa-envelope"></i>
+                                        <i className="fa fa-envelope"></i>
                                         <span> </span>
                                         
                                         <a href="mailto:hello@luc.io">
-                                            <span class="link">hello<span style={{
+                                            <span className="link">hello<span style={{
                                                 transform: 'translateY(-2px)',
                                                 display: 'inline-block'
                                             }}>@</span>luc.io</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <i class="fa fa-phone"></i>
+                                        <i className="fa fa-phone"></i>
                                         <span> </span>
                                         
                                         <a tel="07783400858">
-                                            <span class="link">07783400858</span>
+                                            <span className="link">07783400858</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <i class="fa fa-globe"></i>
+                                        <i className="fa fa-globe"></i>
                                         <span> </span>
 
                                         <a href="http://luc.io" target="_blank">
-                                            <span class="link">luc.io</span>
+                                            <span className="link">luc.io</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <i class="fab fa-linkedin"></i>
+                                        <i className="fab fa-linkedin"></i>
                                         <span> </span>
 
                                         <a href="http://linkedin.com/in/luciocuddeford" target="_blank">
-                                            <span class="link">luciocuddeford</span>
+                                            <span className="link">luciocuddeford</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <i class="fab fa-instagram"></i>
+                                        <i className="fab fa-instagram"></i>
                                         <span> </span>
 
                                         <a href="http://instagram.com/luc.io" target="_blank">
-                                            <span class="link"><span style={{
+                                            <span className="link"><span style={{
                                                 transform: 'translateY(-2px)',
                                                 display: 'inline-block'
                                             }}>@</span>luc.io</span>
@@ -86,32 +86,32 @@ class CVPage extends Component {
                                 
                                 <section>
                                     <h2>Education</h2>
-                                    <article class="educationItem">
-                                        <span class="course">BSc Creative Computing</span>
-                                        <div class="grade">First Class Honours</div>
-                                        <div class="where">Goldsmiths College</div>
+                                    <article className="educationItem">
+                                        <span className="course">BSc Creative Computing</span>
+                                        <div className="grade">First Class Honours</div>
+                                        <div className="where">Goldsmiths College</div>
                                     </article>
-                                    <article class="educationItem">
-                                        <span class="course">A-Levels</span>
-                                        <div class="grade">Maths (B), Spanish (B), Film Studies (B)</div>
-                                        <div class="where">Wimbledon College</div>
+                                    <article className="educationItem">
+                                        <span className="course">A-Levels</span>
+                                        <div className="grade">Maths (B), Spanish (B), Film Studies (B)</div>
+                                        <div className="where">Wimbledon College</div>
                                     </article>
-                                    <article class="educationItem">
-                                        <span class="course">GCSEs</span>
-                                        <div class="grade">10 including: Maths (A), English Language (A), Spanish (A)</div>
-                                        <div class="where">Wimbledon College</div>
+                                    <article className="educationItem">
+                                        <span className="course">GCSEs</span>
+                                        <div className="grade">10 including: Maths (A), English Language (A), Spanish (A)</div>
+                                        <div className="where">Wimbledon College</div>
                                     </article>
                                 </section>
                                 
                                 <section>
                                     <h2>Referees</h2>
-                                    <article class="educationItem" style={{marginBottom: 15}}>
-                                        <div class="course">Atul Banerjee</div>
-                                        <div class="grade">Managing Director, ABE Associates</div>
-                                        <i class="fa fa-envelope"></i>
+                                    <article className="educationItem" style={{marginBottom: 15}}>
+                                        <div className="course">Atul Banerjee</div>
+                                        <div className="grade">Managing Director, ABE Associates</div>
+                                        <i className="fa fa-envelope"></i>
                                         <span> </span>
                                         <a href="mailto:atul@abeassociates.co.uk">
-                                            <span class="link">atul<span style={{
+                                            <span className="link">atul<span style={{
                                                 transform: 'translateY(-2px)',
                                                 display: 'inline-block'
                                             }}>@</span>abeassociates.co.uk</span>
@@ -119,20 +119,20 @@ class CVPage extends Component {
                                         
                                         <br />
                                         
-                                        <i class="fa fa-phone"></i>
+                                        <i className="fa fa-phone"></i>
                                         <span> </span>
                                         <a tel="07740942087">
-                                            <span class="link">07740942087</span>
+                                            <span className="link">07740942087</span>
                                         </a>
                                     </article>
 
-                                    <article class="educationItem">
-                                        <div class="course">Dr. Mick Grierson</div>
-                                        <div class="grade">Reader, Goldsmiths College</div>
-                                        <i class="fa fa-envelope"></i>
+                                    <article className="educationItem">
+                                        <div className="course">Dr. Mick Grierson</div>
+                                        <div className="grade">Reader, Goldsmiths College</div>
+                                        <i className="fa fa-envelope"></i>
                                         <span> </span>
                                         <a href="mailto:m.grierson@gold.ac.uk">
-                                            <span class="link">m.grierson<span style={{
+                                            <span className="link">m.grierson<span style={{
                                                 transform: 'translateY(-2px)',
                                                 display: 'inline-block'
                                             }}>@</span>gold.ac.uk</span>
@@ -140,10 +140,10 @@ class CVPage extends Component {
                                         
                                         <br/>
                                         
-                                        <i class="fa fa-phone"></i>
+                                        <i className="fa fa-phone"></i>
                                         <span> </span>
                                         <a tel="02070785139">
-                                            <span class="link">02070785139</span>
+                                            <span className="link">02070785139</span>
                                         </a>
                                     </article>
                                 </section>
@@ -174,7 +174,7 @@ class CVPage extends Component {
                                         <div className="row">
                                             <div className="col-xs-12 col-sm-6">
                                                 <p>
-                                                    <a rel="noopener noreferrer" href="http://luc.io/portfolio/#ricks-retro" target="_blank">Rick’s Retro</a> - My most noteworthy project. An eCommerce site built for independent vintage clothes business Rick’s Retro. Technology stack: <b>Node.js</b>, <b>Express</b>, <b>MongoDB</b>, <b>jQuery</b>, and <b>SASS</b>. The site was entirely built and mostly designed by me.
+                                                    <a rel="noopener noreferrer" href="http://luc.io/portfolio/#ricks-retro" target="_blank">Rick’s Retro</a> - My most noteworthy project. An eCommerce site built for independent vintage clothes business Rick’s Retro. Technology stack: <b>Node.js</b>, <b>Express</b>, <b>MongoDB</b>, <b>jQuery</b>, <b>Redis</b>, and <b>SASS</b>. The site was entirely built and mostly designed by me.
                                         </p>
                                             </div>
                                         
@@ -258,41 +258,44 @@ class CVPage extends Component {
                                     <div className="row">
                                         <div className="col-xs-12 col-sm-4">
                                     
-                                            <article class="educationItem">
-                                                <span class="course">Freelance</span>
-                                                <div class="grade">Wimbledon</div>
-                                                <div class="where">Freelance web developer since 2016</div>
+                                            <article className="educationItem">
+                                                <span className="course">Rick’s Retro</span>
+                                                <div className="grade">London</div>
+                                                <div className="where">Full Stack Developer</div>
                                             </article>
-                                            
-                                            <article class="educationItem">
-                                                <span class="course">Lu-Ma Restaurant</span>
-                                                <div class="grade">Wimbledon</div>
-                                                <div class="where">Part Time Chef Assistant</div>
+                                    
+                                            <article className="educationItem">
+                                                <span className="course">Freelance</span>
+                                                <div className="grade">Wimbledon</div>
+                                                <div className="where">Freelance web developer since 2016</div>
                                             </article>
-                                            
-                                            
                                         </div>
                                     
                                         <div className="col-xs-12 col-sm-4">
-                                            <article class="educationItem">
-                                                <span class="course">FARA Charity Shop</span>
-                                                <div class="grade">Wimbledon</div>
-                                                <div class="where">Part Time Volunteer Work</div>
+                                            <article className="educationItem">
+                                                <span className="course">Lu-Ma Restaurant</span>
+                                                <div className="grade">Wimbledon</div>
+                                                <div className="where">Part Time Chef Assistant</div>
                                             </article>
-                                            
-                                            <article class="educationItem">
-                                                <span class="course">Animal Samaritans Charity Shop</span>
-                                                <div class="grade">Croydon</div>
-                                                <div class="where">Part Time Volunteer Work</div>
+
+                                            <article className="educationItem">
+                                                <span className="course">FARA Charity Shop</span>
+                                                <div className="grade">Wimbledon</div>
+                                                <div className="where">Part Time Volunteer Work</div>
                                             </article>
                                         </div>
                                         
                                         <div className="col-xs-12 col-sm-4">
-                                            
-                                            <article class="educationItem">
-                                                <span class="course">Sportcal</span>
-                                                <div class="grade">Wimbledon</div>
-                                                <div class="where">Work Experience</div>
+                                            <article className="educationItem">
+                                                <span className="course">Animal Samaritans Charity Shop</span>
+                                                <div className="grade">Croydon</div>
+                                                <div className="where">Part Time Volunteer Work</div>
+                                            </article>
+
+                                            <article className="educationItem">
+                                                <span className="course">Sportcal</span>
+                                                <div className="grade">Wimbledon</div>
+                                                <div className="where">Work Experience</div>
                                             </article>
                                         </div>
                                     </div>
