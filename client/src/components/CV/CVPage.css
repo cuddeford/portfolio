@@ -4,7 +4,7 @@
     min-height: 100vh;
     font-size: 0.95em;
     hyphens: auto;
-    
+
     transition: background 0ms ease-in-out,
         color 0ms ease-in-out
 }
@@ -12,9 +12,9 @@
 .CVWrapper.start {
     background: white;
     color: black;
-    
+
     background: rgb(240, 240, 240);
-    padding-top: 30px;
+    /* padding-top: 30px; */
 }
 
 .CVWrapper h1,
@@ -37,7 +37,7 @@
 .CVContent {
     background: white;
     box-shadow: 0 10px 20px -1px rgba(0, 0, 0, 0.23);
-    
+
     padding-top: 90px;
     padding-bottom: 30px;
     padding-right: 50px;
@@ -104,15 +104,15 @@
   a[href]:after {
     content: none !important;
   }
-  
+
   .CVSidebar img {
       max-width: 150px !important
   }
-  
+
   .CVContent {
-      padding-right: 100px;
+      /* padding-right: 100px; */
   }
-  
+
   .downloadLink {
       display: none
   }

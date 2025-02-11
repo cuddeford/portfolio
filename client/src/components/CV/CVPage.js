@@ -30,11 +30,13 @@ class CVPage extends Component {
                                 }}>
                                     <div className="download fa fa-download"></div>
                                 </a>
-                                
-                                <img src="/images/face.jpg" />
-                                <h1 style={{ fontWeight: 'bold' }}>Lucio Cuddeford</h1>
-                                <h3 style={{ marginTop: -5, marginBottom: 30, fontFamily: 'Playfair Display', transform: 'skewX(-15deg)' }}>Programmer & Artist</h3>
-                                
+                                {/* <img src="/images/face.jpg" /> */}
+                                <h1 style={{
+                                    fontWeight: 'bold',
+                                    marginTop: -2,
+                                }}>
+                                    Lucio Cuddeford
+                                </h1>
                                 <ul className="list-unstyled contactList">
                                     <li>
                                         <i className="fa fa-envelope"></i>
