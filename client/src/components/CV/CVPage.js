@@ -20,7 +20,7 @@ class CVPage extends Component {
                     <div className="CVContent container">
                         <div className="row">
                             <div className="col-xs-12 col-sm-4 CVSidebar">
-                                <a href="/files/LucioCuddeford-CV.pdf" className="downloadLink" target="_blank" title="Download" download="" style={{
+                                <a href="/files/CV-Lucio Cuddeford-2024.pdf" className="downloadLink" target="_blank" title="Download" download="" style={{
                                     'zIndex': 1000,
                                     'position': 'relative',
                                     'float': 'left',
@@ -71,7 +71,7 @@ class CVPage extends Component {
                                         <i className="fa fa-globe"></i>
                                         <span> </span>
 
-                                        <a href="http://luc.io" target="_blank">
+                                        <a href="https://luc.io" target="_blank">
                                             <span className="link">luc.io</span>
                                         </a>
                                     </li>
@@ -79,7 +79,7 @@ class CVPage extends Component {
                                         <i className="fab fa-linkedin"></i>
                                         <span> </span>
 
-                                        <a href="http://linkedin.com/in/luciocuddeford" target="_blank">
+                                        <a href="https://linkedin.com/in/luciocuddeford" target="_blank">
                                             <span className="link">luciocuddeford</span>
                                         </a>
                                     </li>
@@ -87,7 +87,7 @@ class CVPage extends Component {
                                         <i className="fab fa-instagram"></i>
                                         <span> </span>
 
-                                        <a href="http://instagram.com/luc.io" target="_blank">
+                                        <a href="https://instagram.com/luc.io" target="_blank">
                                             <span className="link"><span style={{
                                                 transform: 'translateY(-2px)',
                                                 display: 'inline-block'
@@ -117,9 +117,30 @@ class CVPage extends Component {
 
                                 <section>
                                     <h2>Referees</h2>
-                                    <article className="educationItem" style={{marginBottom: 15}}>
+                                    <article className="educationItem" style={{ marginBottom: 15 }}>
+                                        <div className="course">Chris Adams</div>
+                                        <div className="grade">Ex-CEO at OTHERWORLD</div>
+                                        <i className="fa fa-envelope"></i>
+                                        <span> </span>
+                                        <a href="mailto:chris@hylia.uk">
+                                            <span className="link">chris<span style={{
+                                                transform: 'translateY(-2px)',
+                                                display: 'inline-block'
+                                            }}>@</span>hylia.uk</span>
+                                        </a>
+
+                                        <br />
+
+                                        <i className="fa fa-phone"></i>
+                                        <span> </span>
+                                        <a tel="07528721259">
+                                            <span className="link">07528721259</span>
+                                        </a>
+                                    </article>
+
+                                    <article className="educationItem" style={{ marginBottom: 15 }}>
                                         <div className="course">Atul Banerjee</div>
-                                        <div className="grade">Managing Director, ABE Associates</div>
+                                        <div className="grade">Managing Director at ABE Associates</div>
                                         <i className="fa fa-envelope"></i>
                                         <span> </span>
                                         <a href="mailto:atul@abeassociates.co.uk">
@@ -140,7 +161,7 @@ class CVPage extends Component {
 
                                     <article className="educationItem">
                                         <div className="course">Dr. Mick Grierson</div>
-                                        <div className="grade">Reader, Goldsmiths College</div>
+                                        <div className="grade">Reader at Goldsmiths College</div>
                                         <i className="fa fa-envelope"></i>
                                         <span> </span>
                                         <a href="mailto:m.grierson@gold.ac.uk">
@@ -167,13 +188,13 @@ class CVPage extends Component {
                                     <div className="row">
                                         <div className="col-xs-12 col-sm-6">
                                             <p>
-                                                A variety of subjects interest me and I am currently exploring web development. Creative Computing at Goldsmiths equipped me with the tools I need to make use of both my creativity and my technicality.
+                                                I am interested in web technologies and have spent my career working with the full stack: design, front-end, and back-end. I love building things and making them a delight to use. I am a creative thinker and I enjoy solving problems.
                                             </p>
                                         </div>
 
                                         <div className="col-xs-12 col-sm-6">
                                             <p>
-                                                This allows me to work with the full stack, including design, front-end, and back-end. I am keen to develop my skills and I welcome new challenges.
+                                                I am especially interested in the front-end but I am also a competent back-end developer. I have experience with a wide range of technologies and I am always keen to learn more. I have recently begun teaching myself Web3 technologies like Solidity and the Solana blockchain: <a rel="noopener noreferrer" href="https://luc.io/portfolio/#solana-memecoin-sniper" target="_blank">Solana token bot.</a>
                                             </p>
                                         </div>
                                     </div>
@@ -186,46 +207,41 @@ class CVPage extends Component {
                                         <div className="row">
                                             <div className="col-xs-12 col-sm-6">
                                                 <p>
-                                                    <a rel="noopener noreferrer" href="http://luc.io/portfolio/#ricks-retro" target="_blank">Rick’s Retro</a> - My most noteworthy project. An eCommerce site built for independent vintage clothes business Rick’s Retro. Technology stack: <b>Node.js</b>, <b>Express</b>, <b>MongoDB</b>, <b>jQuery</b>, <b>Redis</b>, and <b>SASS</b>. The site was entirely built and mostly designed by me.
-                                        </p>
+                                                    <a rel="noopener noreferrer" href="https://luc.io/portfolio/#otherworld" target="_blank">OTHERWORLD</a> — I spent almost 6 years here designing and building large parts of the product before the company closed in 2024. OTHERWORLD was a virtual reality bar and arcade where you could come with your friends to play VR, earn points, and drink together at the bar. It was an ambitious project, pioneering the format and setting the standard for VR arcades in the UK.
+                                                </p>
+
+                                                <p>
+                                                    My role as Senior Full Stack Engineer and only developer (besides the CEO) required me to design, architect, and develop key tools and infrastructure to facilitate the VR sessions from booking to exit. My projects included:
+                                                </p>
+
+                                                <p>
+                                                    <b>KRONOS</b> — the backend server and main brain. (<b>Node</b>, <b>MongoDB</b>)
+                                                </p>
+
+                                                <p>
+                                                    <b>ZEUS</b> — the internal website for staff to manage all aspects of the business including bookings, a complete EPOS system, table orders, customers, and most importantly the live management of ongoing VR sessions. (<b>Meteor</b>, <b>React</b>, <b>Node</b>)
+                                                </p>
                                             </div>
 
                                             <div className="col-xs-12 col-sm-6">
                                                 <p>
-                                                    <a rel="noopener noreferrer" href="http://luc.io/portfolio/#this-website" target="_blank">Portfolio</a> - My other projects are available to browse on my portfolio website which was written in <b>JavaScript</b> with <b>React</b> and <b>Node.js</b> with <b>Express</b>. The projects are stored in a <b>MongoDB</b> database and can be modified, added and deleted via an API.
-                                        </p>
+                                                    <b>HESTIA</b> — the iPad app running on tables for guests to order food and drink using<br /><span style={{ fontStyle: 'italic' }}>∂ DreamCoin</span> and contactless. (<b>Cordova</b>, <b>React</b>)
+                                                </p>
+
+                                                <p>
+                                                    <b>PATROKLOS</b> — the companion app for guests to track all their previous sessions, their wallet spending, leaderboards, in game navigational map, and their OTHERWORLD identification, DreamPort. Build for iOS and Android. (<b>React Native</b>, <b>Expo</b>, <b>React</b>, <b>Node</b>)
+                                                </p>
+
+                                                <p>
+                                                    <b>HERA</b> — the background management software running on all the VR pods designed to manage and automate all operations for VR including starting and stopping games, assigning customers and sessions, and recording the guests in game scores. (<b>Node</b>, <b>Electron</b>)
+                                                </p>
+
+                                                <p>
+                                                    <b>DIONYSUS</b> — the automated self-service beer and cocktail bar for guests, made with custom circuit boards, flow meters, solenoids, and deeply integrated into Kronos and Zeus. (<b>Svelte</b>)
+                                                </p>
                                             </div>
                                         </div>
-
                                     </article>
-
-                                    <br />
-
-                                    <div className="row">
-                                        <div className="col-xs-12 col-sm-6">
-                                            <p>
-                                                My course at Goldsmiths involved a wide range of modules including: Web Programming, Databases And The Web, Advanced Audio-Visual Processing, Perception and Multimedia, Advanced Graphics and Animation, and Physical Computing. Several practical projects included:
-                                    </p>
-                                            <p>
-                                                <a href="/portfolio/#monopad" target="_blank">Monopad</a> - My final year project involved creating a handheld hybrid analogue / digital sound synthesiser designed
-                                            </p>
-                                        </div>
-
-                                        <div className="col-xs-12 col-sm-6">
-                                            <article>
-                                                <p>
-                                                    to take advantage of the ergonomics of typical game controllers. Written in <b>C++</b> on the Teensy 3.2 development board. This project was selected for the Goldsmiths College Computing &amp; Digital Arts Exhibition in 2016.
-                                        </p>
-                                            </article>
-
-                                            <article>
-                                                <p>
-                                                    <a href="/portfolio/#helix" target="_blank">Helix</a> - A polyphonic synthesiser played over MIDI. Written in <b>openFrameworks</b> (<b>C++</b>) with the Maximilian synthesis library.
-                                        </p>
-                                            </article>
-                                        </div>
-                                    </div>
-
                                 </section>
 
                                 <section>
@@ -235,30 +251,25 @@ class CVPage extends Component {
                                         <div className="col-xs-12 col-sm-6">
                                             <h3>Technologies</h3>
                                             <p>
-                                                JavaScript, Node.js, MongoDB, HTML, (S)CSS, React, Processing, Java, C++, Bootstrap, PHP, MySQL, DSP, openFrameworks, Unity3D, C#, UNIX, Python, Arduino & Electronics, Photoshop, Illustrator, Premiere.
+                                                JavaScript (TypeScript), Node.js, MongoDB, React, HTML, (S)CSS, Solana Blockchain, Solidity, Photography, Processing, Java, C++, PHP, MySQL, DSP, openFrameworks, Unity3D, C#, UNIX, Python, Arduino & Electronics, Photoshop, Illustrator, Premiere, Lightroom.
                                             </p>
 
                                             <h3>Communication</h3>
                                             <p>
-                                                Articulate with good communication skills.
+                                                Articulate with excellent communication skills.
                                                 Strong attention to detail and keen to find elegant solutions to problems.
-                                            </p>
-
-                                            <h3>Languages</h3>
-                                            <p>
-                                                English (native), Italian (fluent), Spanish (basic conversational).
                                             </p>
                                         </div>
 
                                         <div className="col-xs-12 col-sm-6">
                                             <h3>Interests and Hobbies</h3>
                                             <p>
-                                                I love art and photography and I spend a lot of my time painting. I enjoy programming in my spare time and I am also interested in fundamental science (eg astronomy and quantum theory) and cutting-edge technology. If I'm not painting or programming I have my nose buried in a book.
+                                                I love art and photography and I spend a lot of my time taking and editing photos, printing photobooks once a year. I love travelling and hiking, having recently spent 4 months in Indonesia. In my free time I like to read and explore nature.
                                             </p>
 
-                                            <h3>Sports</h3>
+                                            <h3>Languages</h3>
                                             <p>
-                                                Cycling and running are the two sports I engage in most frequently. Snowboarding is the one I enjoy most.
+                                                English (native), Italian (fluent), Spanish (basic conversational).
                                             </p>
                                         </div>
                                     </div>
@@ -269,45 +280,44 @@ class CVPage extends Component {
 
                                     <div className="row">
                                         <div className="col-xs-12 col-sm-4">
+                                            <article className="educationItem">
+                                                <span className="course">OTHERWORLD</span>
+                                                <div className="grade">London</div>
+                                                <div className="where">Senior Full Stack Engineer</div>
+                                            </article>
 
                                             <article className="educationItem">
                                                 <span className="course">Rick’s Retro</span>
                                                 <div className="grade">London</div>
                                                 <div className="where">Full Stack Developer</div>
                                             </article>
-
-                                            <article className="educationItem">
-                                                <span className="course">Freelance</span>
-                                                <div className="grade">Wimbledon</div>
-                                                <div className="where">Freelance web developer since 2016</div>
-                                            </article>
                                         </div>
 
                                         <div className="col-xs-12 col-sm-4">
+                                            <article className="educationItem">
+                                                <span className="course">Freelance</span>
+                                                <div className="grade">London</div>
+                                                <div className="where">Freelance web developer</div>
+                                            </article>
+
                                             <article className="educationItem">
                                                 <span className="course">Lu-Ma Restaurant</span>
                                                 <div className="grade">Wimbledon</div>
                                                 <div className="where">Part Time Chef Assistant</div>
                                             </article>
+                                        </div>
 
+                                        <div className="col-xs-12 col-sm-4">
                                             <article className="educationItem">
                                                 <span className="course">FARA Charity Shop</span>
                                                 <div className="grade">Wimbledon</div>
                                                 <div className="where">Part Time Volunteer Work</div>
                                             </article>
-                                        </div>
 
-                                        <div className="col-xs-12 col-sm-4">
                                             <article className="educationItem">
                                                 <span className="course">Animal Samaritans Charity Shop</span>
                                                 <div className="grade">Croydon</div>
                                                 <div className="where">Part Time Volunteer Work</div>
-                                            </article>
-
-                                            <article className="educationItem">
-                                                <span className="course">Sportcal</span>
-                                                <div className="grade">Wimbledon</div>
-                                                <div className="where">Work Experience</div>
                                             </article>
                                         </div>
                                     </div>

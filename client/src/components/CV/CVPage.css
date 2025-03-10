@@ -48,7 +48,7 @@
     text-decoration: none;
     text-transform: uppercase;
     padding-bottom: 2px;
-    color: cyan !important;
+    color: magenta !important;
     -webkit-print-color-adjust: exact;
     border-bottom: 10px solid rgba(0, 255, 255, 0);
     border: none;
