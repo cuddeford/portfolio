@@ -269,20 +269,23 @@ class CVPage extends Component {
                                             <p>
                                                 JavaScript (TypeScript), Node.js, MongoDB, React, HTML, (S)CSS, Solana Blockchain, Solidity, Photography, Processing, Java, C++, PHP, MySQL, DSP, openFrameworks, Unity3D, C#, UNIX, Python, Arduino & Electronics, Photoshop, Premiere, Lightroom.
                                             </p>
-
+                                        </div>
+                                        <div className="col-xs-6">
+                                            <h3>Interests and Hobbies</h3>
+                                            <p>
+                                                I love art and photography and I spend a lot of my time taking and editing photos, printing a photobook once a year. I love travelling and hiking, having recently spent 5 months in Indonesia and India.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-xs-6">
                                             <h3>Communication</h3>
                                             <p>
                                                 Articulate with excellent communication skills.
                                                 Strong attention to detail and keen to find elegant solutions to problems.
                                             </p>
                                         </div>
-
                                         <div className="col-xs-6">
-                                            <h3>Interests and Hobbies</h3>
-                                            <p>
-                                                I love art and photography and I spend a lot of my time taking and editing photos, printing a photobook once a year. I love travelling and hiking, having recently spent 5 months in Indonesia and India.
-                                            </p>
-
                                             <h3>Languages</h3>
                                             <p>
                                                 English (native), Italian (fluent), Spanish (basic conversational), German (very basic), Japanese (very basic).
