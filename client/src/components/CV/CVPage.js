@@ -20,7 +20,7 @@ class CVPage extends Component {
                     <div className="CVContent container">
                         <div className="row">
                             <div className="col-xs-4 CVSidebar">
-                                <a href="/files/CV-Lucio Cuddeford-2024.pdf" className="downloadLink" target="_blank" title="Download" download="" style={{
+                                <a href="/files/Lucio-Cuddeford-CV.pdf" className="downloadLink" target="_blank" title="Download" download="" style={{
                                     'zIndex': 1000,
                                     'position': 'relative',
                                     'float': 'left',
@@ -115,18 +115,19 @@ class CVPage extends Component {
 
                                 <section>
                                     <h2>Employment</h2>
-                                    <article className="educationItem" style={{ marginBottom: 15 }}>
-                                        <span className="course">OTHERWORLD</span>
-                                        <div className="grade">London</div>
-                                        <div className="where">Senior Full Stack Engineer</div>
-                                        <div className="where">2018 — 2024</div>
-                                    </article>
 
                                     <article className="educationItem" style={{ marginBottom: 15 }}>
                                         <span className="course">Xydrobe</span>
                                         <div className="grade">London</div>
                                         <div className="where">Independent Contractor</div>
                                         <div className="where">2024</div>
+                                    </article>
+
+                                    <article className="educationItem" style={{ marginBottom: 15 }}>
+                                        <span className="course">OTHERWORLD</span>
+                                        <div className="grade">London</div>
+                                        <div className="where">Senior Full Stack Engineer</div>
+                                        <div className="where">2018 — 2024</div>
                                     </article>
 
                                     <article className="educationItem" style={{ marginBottom: 15 }}>
@@ -248,12 +249,12 @@ class CVPage extends Component {
                                             <div className="col-xs-6">
                                                 <h3>Xydrobe</h3>
                                                 <p>
-                                                    After OTHERWORLD I worked as an independent contractor helping Xydrobe to launch their immersive VR experience in Harrods London.
+                                                    After OTHERWORLD I worked as an independent contractor helping Xydrobe to launch their immersive VR experience in Harrods London. (<b>Unity</b>, <b>Node</b>, <b>Electronics</b>)
                                                 </p>
 
                                                 <h3>More</h3>
                                                 <p>
-                                                    <a rel="noopener noreferrer" href="https://luc.io/portfolio/" target="_blank">Portfolio</a> — You can find my other projects on my portfolio page, including the handheld synthesiser I made in 2016: <a rel="noopener noreferrer" href="https://luc.io/portfolio/#monopad" target="_blank">Monopad</a>.
+                                                    <a rel="noopener noreferrer" href="https://luc.io/portfolio/" target="_blank">Portfolio</a> — You can find my other projects on my portfolio page, including the handheld synthesiser I made in 2016: <a rel="noopener noreferrer" href="https://luc.io/portfolio/#monopad" target="_blank">Monopad</a> (<b>DSP</b>, <b>Arduino</b>, <b>C++</b>, <b>Electronics</b>).
                                                 </p>
                                             </div>
                                         </div>
@@ -267,7 +268,7 @@ class CVPage extends Component {
                                         <div className="col-xs-6">
                                             <h3>Technologies</h3>
                                             <p>
-                                                JavaScript (TypeScript), Node.js, MongoDB, React, HTML, (S)CSS, Solana Blockchain, Solidity, Photography, Processing, Java, C++, PHP, MySQL, DSP, openFrameworks, Unity3D, C#, UNIX, Python, Arduino & Electronics, Photoshop, Premiere, Lightroom.
+                                                JavaScript (TypeScript), Node.js, MongoDB, React, Amazon Web Services (AWS), Google Cloud Platform (GCP), HTML, (S)CSS, Git, Solana Blockchain, Solidity, Photography, Processing, Java, C++, PHP, MySQL, DSP, openFrameworks, Unity3D, C#, UNIX, Python, Arduino & Electronics, Photoshop, Premiere, Lightroom.
                                             </p>
                                         </div>
                                         <div className="col-xs-6">

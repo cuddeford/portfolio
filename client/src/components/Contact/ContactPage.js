@@ -14,15 +14,15 @@ const ContactPage = props => {
                     <br />
                     <br />
                 </div>
-                
+
                 You can find my CV here:
                 <br />
-                <a download href="/files/LucioCuddeford-CV.pdf">
+                <a download href="/files/Lucio-Cuddeford-CV.pdf">
                     <i className="fas fa-briefcase"></i> CV
                 </a>
                 <br />
                 <br />
-                
+
                 You can find my artwork here:
                 <br />
                 <NavLink to="//instagram.com/luc.io">
@@ -33,7 +33,7 @@ const ContactPage = props => {
                 </NavLink>
                 <br />
                 <br />
-                
+
                 You can email me at:
                 <br />
                 <a href="mailto:hello@luc.io">
@@ -43,7 +43,7 @@ const ContactPage = props => {
                     }}>@</span>luc.io
                 </a>
             </div>
-            
+
         </div>
     )
 
