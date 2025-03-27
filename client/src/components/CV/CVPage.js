@@ -193,23 +193,30 @@ class CVPage extends Component {
                                             <h3>OTHERWORLD</h3>
                                             <div className="col-xs-6">
                                                 <p>
-                                                    <a rel="noopener noreferrer" href="https://luc.io/portfolio/#otherworld" target="_blank">OTHERWORLD</a> was a virtual reality bar and arcade where you could come with your friends to play VR, earn points, and drink together at the bar. It was an ambitious project, pioneering the format and setting the standard for VR arcades in the UK.
+                                                    <a rel="noopener noreferrer" href="https://luc.io/portfolio/#otherworld" target="_blank">OTHERWORLD</a> was a virtual reality bar and arcade where you could come with your friends to play VR, earn points, and drink together at the bar. It was an ambitious project, pioneering the format and setting the standard for VR arcades in the UK. The company raised <b>£8.7m</b> in funding and generated <b>£11m</b> in revenue.
                                                 </p>
 
                                                 <p>
-                                                    My role as Senior Full Stack Engineer and only developer (working closely with the CEO) required me to design, architect, and develop key tools and infrastructure to facilitate the VR sessions from booking to exit.
+                                                    My role as <b>Senior Full Stack Engineer</b> and only developer (working closely with the CEO) required me to design, architect, and develop key tools and infrastructure to facilitate the VR sessions from booking to exit.
                                                 </p>
+
+                                                <p>
+                                                    I trained new hires (and informally mentored one); led stand-ups; managed backlogs; and liased with all teams (game team, leadership, front-line tech support, on-site floor staff, etc.) as I led feature and product development to ensure the tech was aligned with the needs of staff internally and of the customers externally.
+                                                </p>
+
                                                 <p>
                                                     My tech powered the business for almost <b>6</b> years,
                                                     <ul>
-                                                        <li>serving almost <b>400,000</b> customers,</li>
+                                                        <li>serving almost <b>400,000</b> customers (including <b>Adele</b>, <b>Skepta</b>, <b>KSI</b>, <b>Jonathan Ross</b>, <b>Yuki Tsunoda</b>, <b>Noel Clarke</b>, <b>Jesy Nelson</b>),</li>
                                                         <li>over <b>150,000</b> bookings,</li>
                                                         <li>almost <b>250,000</b> EPOS orders,</li>
                                                         <li>almost <b>6,000,000</b> internal wallet transactions, and</li>
                                                         <li>over <b>17,000,000</b> in-game achievements</li>
                                                     </ul>
                                                 </p>
+                                            </div>
 
+                                            <div className="col-xs-6">
                                                 <p>
                                                     <b>KRONOS</b> — the backend server and main brain. (<b>Node</b>, <b>MongoDB</b>)
                                                 </p>
