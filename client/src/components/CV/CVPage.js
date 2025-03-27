@@ -224,9 +224,7 @@ class CVPage extends Component {
                                                 <p>
                                                     <b>HESTIA</b> — the iPad app running on tables for guests to order food and drink using<br /><span style={{ fontStyle: 'italic' }}>∂ DreamCoin</span> and contactless. (<b>Cordova</b>, <b>React</b>)
                                                 </p>
-                                            </div>
 
-                                            <div className="col-xs-6">
                                                 <p>
                                                     <b>ZEUS</b> — the internal website for staff to manage all aspects of the business including bookings, a complete EPOS system, table orders, customers, and most importantly the live management of ongoing VR sessions. (<b>Meteor</b>, <b>React</b>, <b>Node</b>)
                                                 </p>
@@ -281,7 +279,7 @@ class CVPage extends Component {
                                         <div className="col-xs-6">
                                             <h3>Interests and Hobbies</h3>
                                             <p>
-                                                I love art and photography and I spend a lot of my time taking and editing photos, printing a photobook once a year. I love travelling and hiking, having recently spent 5 months in Indonesia and India.
+                                                I love art, painting, and photography and I spend a lot of my time taking and editing photos, printing a photobook once a year of my best photos taken that year. I love travelling and hiking, having recently spent 5 months in Indonesia and India.
                                             </p>
                                         </div>
                                     </div>
