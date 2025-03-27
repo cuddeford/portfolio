@@ -3,7 +3,7 @@
     color: white;
     min-height: 100vh;
     font-size: 0.95em;
-    hyphens: auto;
+    /* hyphens: auto; */
 
     transition: background 0ms ease-in-out,
         color 0ms ease-in-out
