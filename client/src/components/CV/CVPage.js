@@ -36,7 +36,7 @@ class CVPage extends Component {
                                     fontWeight: 'bold',
                                     marginTop: -2,
                                 }}>
-                                    Lucio Cuddeford
+                                    Lucio<br />Cuddeford
                                 </h1>
                                 <h3 style={{
                                     marginTop: -5,
