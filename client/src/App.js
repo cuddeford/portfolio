@@ -60,6 +60,7 @@ class App extends Component {
         const projects = await fetch('/api/projects', {
             credentials: 'include'
         })
+
         const body = await projects.json()
 
         return this.setState({
@@ -71,13 +72,18 @@ class App extends Component {
     defineTags = firstTime => {
 
         // Grab all the tags from the projects and remove duplicates
-        const tags = [...new Set(this.state.projects.map(p => p.tags.join(', ')).join(', ').split(', '))]
+        const tags = [
+            ...new Set(this.state.projects.map(p => p.tags.join(', ')).join(', ').split(', '))
+        ]
+
         const allTags = tags.map((tag, index) => ({
             tag,
             colour: `hsla(${(360 / tags.length) * index}, ${this.state.saturation}, ${this.state.brightness}, 1)`
         }))
 
-        if (!firstTime) return this.setState({ tags: allTags })
+        if (!firstTime) {
+            return this.setState({ tags: allTags })
+        }
 
         this.setState({
             tags: allTags,
@@ -86,15 +92,19 @@ class App extends Component {
     }
 
     addTag = newTag => {
-        if (this.state.tags.find(tag => tag.tag.toLowerCase() === newTag.toLowerCase()))
+        if (this.state.tags.find(tag => tag.tag.toLowerCase() === newTag.toLowerCase())) {
             return (alert('This tag already exists'), false)
+        }
 
         this.setState(prevState => {
             prevState.tags.push({
                 tag: newTag,
                 colour: `hsla(360, ${this.state.saturation}, ${this.state.brightness}, 1)`
             })
-            return { tags: prevState.tags }
+
+            return {
+                tags: prevState.tags,
+            }
         })
 
         return true
@@ -102,13 +112,15 @@ class App extends Component {
 
     selectTag = (event, tag) => {
         const prevSelectedTags = this.state.selectedTags
-
         const index = prevSelectedTags.indexOf(tag)
 
-        if (index >= 0) prevSelectedTags.splice(index, 1)
-        else prevSelectedTags.push(tag)
-        this.setState({ selectedTags: prevSelectedTags })
+        if (index >= 0) {
+            prevSelectedTags.splice(index, 1)
+        } else {
+            prevSelectedTags.push(tag)
+        }
 
+        this.setState({ selectedTags: prevSelectedTags })
         this.setPossibleTags(prevSelectedTags)
     }
 
@@ -158,10 +170,12 @@ class App extends Component {
             method: 'PUT',
             credentials: 'include'
         })
+
         const body = await toggle.json()
 
-        if (body.shortId === shortId)
+        if (body.shortId === shortId) {
             await this.updateProjects()
+        }
     }
 
     moveProjectUp = async (event, shortId) => {
@@ -171,10 +185,12 @@ class App extends Component {
             method: 'PUT',
             credentials: 'include'
         })
+
         const body = await movement.json()
 
-        if (body.shortId === shortId)
+        if (body.shortId === shortId) {
             await this.updateProjects()
+        }
     }
 
     moveProjectDown = async (event, shortId) => {
@@ -184,29 +200,37 @@ class App extends Component {
             method: 'PUT',
             credentials: 'include'
         })
+
         const body = await movement.json()
 
-        if (body.shortId === shortId)
+        if (body.shortId === shortId) {
             await this.updateProjects()
+        }
     }
 
     deleteProject = async (event, shortId) => {
         event.preventDefault()
 
         const ok = window.confirm('Are you sure?')
-        if (!ok) return
+        if (!ok) {
+            return
+        }
 
         const reallyOk = window.confirm('Are you REALLY sure?')
-        if (!reallyOk) return
+        if (!reallyOk) {
+            return
+        }
 
         const deletion = await fetch('/api/project?shortId=' + shortId, {
             method: 'DELETE',
             credentials: 'include'
         })
+
         const body = await deletion.json()
 
-        if (body.shortId === shortId)
+        if (body.shortId === shortId) {
             await this.updateProjects()
+        }
     }
 
     setAdmin = value => ((this.setState({ admin: value }), this.updateProjects()))
@@ -301,7 +325,7 @@ class App extends Component {
                                 state={this.state} />}
                         />
 
-                        <this.PrivateRoute
+                        <Route
                             exact
                             path='/cv'
                             render={() => <CVPage

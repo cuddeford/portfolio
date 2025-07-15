@@ -58,6 +58,7 @@ body {
   color: white;
   background-color: black;
   min-height: 100vh;
+  font-size: 14px;
 }
 
 a {
@@ -68,6 +69,10 @@ a {
 a:hover, a:active, a:focus {
   text-decoration: none;
   color: white;
+}
+
+p {
+  margin: 0 0 15px;
 }
 
 input, textarea {
