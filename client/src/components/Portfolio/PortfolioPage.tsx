@@ -79,9 +79,7 @@ const PortfolioPage = props => {
         return acc
     }, {})
 
-    console.log(projectsByCategory)
-
-    const [selectedCategories, setSelectedCategories] = useState(['software'])
+    const [selectedCategories, setSelectedCategories] = useState(['pinned'])
     const tags = selectedCategories.reduce((allTags, category) => {
         if (projectsByCategory[category]) {
             projectsByCategory[category].forEach(project => {

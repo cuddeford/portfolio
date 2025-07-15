@@ -25,6 +25,12 @@
     cursor: pointer;
 
     &.selected {
+        margin-bottom: 50px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
         h2 {
             background: white;
             color: black;
