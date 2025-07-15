@@ -99,8 +99,8 @@ const PortfolioPage = props => {
                 admin={props.state.admin}
                 projects={projects}
                 projectsByCategory={projectsByCategory}
-                // selectedCategories={selectedCategories}
-                // setSelectedCategories={setSelectedCategories}
+                selectedCategories={selectedCategories}
+                setSelectedCategories={setSelectedCategories}
                 projectSlug={projectSlug}
                 projectItemClass={projectItemClass}
                 projectItemTagClass={projectItemTagClass}
