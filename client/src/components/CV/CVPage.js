@@ -35,6 +35,7 @@ class CVPage extends Component {
                                 <h1 style={{
                                     fontWeight: 'bold',
                                     marginTop: -2,
+                                    fontSize: '2.5em',
                                 }}>
                                     Lucio<br />Cuddeford
                                 </h1>
@@ -44,7 +45,7 @@ class CVPage extends Component {
                                     fontFamily: 'Playfair Display',
                                     transform: 'skewX(-15deg)',
                                 }}>
-                                    Programmer & Artist
+                                    Full Stack Engineer
                                 </h3>
 
                                 <ul className="list-unstyled contactList">
@@ -57,14 +58,6 @@ class CVPage extends Component {
                                                 transform: 'translateY(-2px)',
                                                 display: 'inline-block'
                                             }}>@</span>luc.io</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <i className="fa fa-phone"></i>
-                                        <span> </span>
-
-                                        <a tel="07783400858">
-                                            <span className="link">07783400858</span>
                                         </a>
                                     </li>
                                     <li>
@@ -97,23 +90,6 @@ class CVPage extends Component {
                                 </ul>
 
                                 <section>
-                                    <h2>Education</h2>
-                                    <article className="educationItem">
-                                        <span className="course">BSc Creative Computing</span>
-                                        <div className="grade">First Class Honours</div>
-                                        <div className="where">Goldsmiths College</div>
-                                        <div className="where">2013 — 2016</div>
-                                    </article>
-                                </section>
-
-                                <section>
-                                    <h2>Referees</h2>
-                                    <article className="educationItem" style={{ marginBottom: 15 }}>
-                                        <div className="grade">Available on request</div>
-                                    </article>
-                                </section>
-
-                                <section>
                                     <h2>Employment</h2>
 
                                     <article className="educationItem" style={{ marginBottom: 15 }}>
@@ -144,7 +120,7 @@ class CVPage extends Component {
                                         <div className="where">2016 — 2017</div>
                                     </article>
 
-                                    <article className="educationItem" style={{ marginBottom: 15 }}>
+                                    {/* <article className="educationItem" style={{ marginBottom: 15 }}>
                                         <span className="course">Lu-Ma Restaurant</span>
                                         <div className="grade">Wimbledon</div>
                                         <div className="where">Part Time Chef Assistant</div>
@@ -159,12 +135,29 @@ class CVPage extends Component {
                                     </article>
 
                                     <article className="educationItem" style={{ marginBottom: 15 }}>
-                                        <span className="course">Animal Samaritans<br/>Charity Shop</span>
+                                        <span className="course">Animal Samaritans<br />Charity Shop</span>
                                         <div className="grade">Croydon</div>
                                         <div className="where">Part Time Volunteer Work</div>
                                         <div className="where">2014</div>
+                                    </article> */}
+                                </section>
+
+                                <section>
+                                    <h2>Education</h2>
+                                    <article className="educationItem">
+                                        <span className="course">BSc Creative Computing</span>
+                                        <div className="grade">First Class Honours</div>
+                                        <div className="where">Goldsmiths College</div>
+                                        <div className="where">2013 — 2016</div>
                                     </article>
                                 </section>
+
+                                {/* <section>
+                                    <h2>Referees</h2>
+                                    <article className="educationItem" style={{ marginBottom: 15 }}>
+                                        <div className="grade">Available on request</div>
+                                    </article>
+                                </section> */}
                             </div>
 
                             <div className="col-xs-8 CVMain">
@@ -172,14 +165,14 @@ class CVPage extends Component {
                                     <h2 style={{ marginTop: 0 }}>Profile</h2>
                                     <div className="row">
                                         <div className="col-xs-6">
-                                            <p>
-                                                I am interested in web technologies and have spent my career working with the full stack: design, front-end, and back-end. I love building things and making them a delight to use. I am a creative thinker and I enjoy solving problems.
+                                            <p style={{ margin: 0 }}>
+                                                I am a <b>product-focused engineer</b> with a strong understanding of the <b>full stack</b> and a growing preference for the <b>front-end</b>. I love building things that people will actually use and I care a lot about making the user experience as enjoyable and frictionless as possible. I am a creative thinker and natural problem solver with a deliberate attention to detail.
                                             </p>
                                         </div>
 
                                         <div className="col-xs-6">
-                                            <p>
-                                                I am especially interested in the front-end but I am also a competent back-end developer. I have experience with a wide range of technologies and I am always keen to learn more. I have recently begun teaching myself Web3 technologies like Solidity and the Solana blockchain: <a rel="noopener noreferrer" href="https://luc.io/portfolio/#solana-memecoin-sniper" target="_blank">Solana token bot.</a>
+                                            <p style={{ margin: 0 }}>
+                                                I thrive in fast paced environments where I'm given the autonomy to take ownership of projects and produce my best work, making me especially suited to <b>start-ups</b>. I also find great satisfaction in solving complex problems with other skilled engineers, such as pair programming, and I love teaching and explaining technical concepts to others.
                                             </p>
                                         </div>
                                     </div>
@@ -190,22 +183,22 @@ class CVPage extends Component {
 
                                     <article>
                                         <div className="row">
-                                            <h3>OTHERWORLD</h3>
+                                            <h3 className="subtitle">OTHERWORLD</h3>
                                             <div className="col-xs-6">
                                                 <p>
                                                     <a rel="noopener noreferrer" href="https://luc.io/portfolio/#otherworld" target="_blank">OTHERWORLD</a> was a virtual reality bar and arcade where you could come with your friends to play VR, earn points, and drink together at the bar. It was an ambitious project, pioneering the format and setting the standard for VR arcades in the UK. The company raised <b>£8.7m</b> in funding and generated <b>£11m</b> in revenue.
                                                 </p>
 
                                                 <p>
-                                                    My role as <b>Senior Full Stack Engineer</b> and only developer (working closely with the CEO) required me to design, architect, and develop key tools and infrastructure to facilitate the VR sessions from booking to exit.
+                                                    My role as <b>Senior Full Stack Engineer</b> and only developer (working closely with the CEO) required me to design, architect, and develop products, key tools, and infrastructure to facilitate the VR sessions from booking to exit.
                                                 </p>
 
                                                 <p>
-                                                    I trained new hires (and informally mentored one); led stand-ups; managed backlogs; and liased with all teams (game team, leadership, front-line tech support, on-site floor staff, etc.) as I led feature and product development to ensure the tech was aligned with the needs of staff internally and of the customers externally.
+                                                    I trained new hires (and informally mentored one); led stand-ups; managed backlogs; and liaised with all teams (game team, leadership, front-line tech support, on-site floor staff, etc.) as I led feature and product development to ensure the tech was aligned with the needs of the staff of the customers.
                                                 </p>
 
                                                 <p>
-                                                    My tech powered the business for almost <b>6</b> years,
+                                                    My tech powered the business from start to end, for <b>6</b> years:
                                                     <ul>
                                                         <li>serving almost <b>400,000</b> customers (including <b>Adele</b>, <b>Skepta</b>, <b>KSI</b>, <b>Jonathan Ross</b>, <b>Yuki Tsunoda</b>, <b>Noel Clarke</b>, <b>Jesy Nelson</b>),</li>
                                                         <li>over <b>150,000</b> bookings,</li>
@@ -218,48 +211,48 @@ class CVPage extends Component {
 
                                             <div className="col-xs-6">
                                                 <p>
-                                                    <b>KRONOS</b> — the backend server and main brain. (<b>Node</b>, <b>MongoDB</b>)
+                                                    <i>KRONOS</i> — the backend server and main brain. (<b>Node</b>, <b>MongoDB</b>)
                                                 </p>
 
                                                 <p>
-                                                    <b>HESTIA</b> — the iPad app running on tables for guests to order food and drink using<br /><span style={{ fontStyle: 'italic' }}>∂ DreamCoin</span> and contactless. (<b>Cordova</b>, <b>React</b>)
+                                                    <i>HESTIA</i> — the iPad app running on tables for guests to order food and drink using <span style={{ fontStyle: 'italic' }}>∂ DreamCoin</span> and contactless. (<b>Cordova</b>, <b>React</b>)
                                                 </p>
 
                                                 <p>
-                                                    <b>ZEUS</b> — the internal website for staff to manage all aspects of the business including bookings, a complete EPOS system, table orders, customers, and most importantly the live management of ongoing VR sessions. (<b>Meteor</b>, <b>React</b>, <b>Node</b>)
+                                                    <i>ZEUS</i> — the internal website for staff to manage all aspects of the business including bookings, a complete EPOS system, table orders, customers, and most importantly the live management of ongoing VR sessions. (<b>Meteor</b>, <b>React</b>, <b>Node</b>)
                                                 </p>
 
                                                 <p>
-                                                    <b>PATROKLOS</b> — the companion app for guests to track all their previous sessions, their wallet spending, leaderboards, in game navigational map, and their OTHERWORLD identification, DreamPort. Build for iOS and Android. (<b>React Native</b>, <b>Expo</b>, <b>React</b>, <b>Node</b>)
+                                                    <i>PATROKLOS</i> — the companion app (iOS & Android) for guests to track all their previous sessions, their wallet spending, leaderboards, in game navigational map, their OTHERWORLD identification,  and an avatar editor for their in-game persona. (<b>React Native</b>, <b>Expo</b>, <b>React</b>, <b>Node</b>, <b>Three.js</b>)
                                                 </p>
 
                                                 <p>
-                                                    <b>HERA</b> — the background management software running on all the VR pods designed to manage and automate all operations for VR including starting and stopping games, assigning customers and sessions, and recording the guests in game scores. (<b>Node</b>, <b>Electron</b>)
+                                                    <i>HERA</i> — the background management software running on all the VR pods designed to manage and automate all operations for VR incl. starting and stopping games, assigning customers and sessions, and recording the guests in game scores. (<b>Node</b>, <b>Electron</b>)
                                                 </p>
 
                                                 <p>
-                                                    <b>DIONYSUS</b> — the automated self-service beer and cocktail bar for guests, made with custom circuit boards, flow meters, solenoids, and deeply integrated into Kronos and Zeus. (<b>Svelte</b>, <b>Electronics</b>, <b>Arduino</b>)
+                                                    <i>DIONYSUS</i> — the automated self-service beer and cocktail bar for guests, made with custom circuit boards, flow meters, solenoids, and deeply integrated into <i>KRONOS</i> and <i>ZEUS</i>. (<b>Svelte</b>, <b>Electronics</b>, <b>Arduino</b>)
                                                 </p>
                                             </div>
                                         </div>
 
-                                        <div className="row">
+                                        <div className="row" style={{ paddingTop: 70 }}>
                                             <div className="col-xs-6">
-                                                <h3>Rick’s Retro</h3>
+                                                <h3 className="subtitle">Xydrobe</h3>
                                                 <p>
-                                                    <a rel="noopener noreferrer" href="https://luc.io/portfolio/#ricks-retro" target="_blank">Rick’s Retro</a> is an eCommerce site I built for independent vintage clothes business Rick’s Retro. I built everything from the ground up (products, orders, payments, etc.) and the site facilitated their business for 7 years before they migrated to a new site. It was completely custom because they needed a unique back-end flow that wasn't available off the shelf. (<b>Node</b>, <b>Express</b>, <b>MongoDB</b>, <b>jQuery</b>, <b>Redis</b>, <b>SASS</b>)
+                                                    I facilitated the launch of Xydrobe’s immersive experience at Harrods in partnership with luxury watchmakers Vacheron Constantin. I took over and fixed their <b>Unity</b> project to enable networking between VR headsets and enable the automated multi-sensory eﬀects (scents and fans). (<b>Unity</b>, <b>Node</b>, <b>Electronics</b>)
+                                                </p>
+
+                                                <h3 className="subtitle">More</h3>
+                                                <p>
+                                                    <a rel="noopener noreferrer" href="https://luc.io/portfolio/" target="_blank">Portfolio</a> — You can find my other projects on my portfolio page, including the handheld synthesiser I made in 2016: <a rel="noopener noreferrer" href="https://luc.io/portfolio/#monopad" target="_blank">Monopad</a> (<b>DSP</b>, <b>Arduino</b>, <b>C++</b>, <b>Electronics</b>).
                                                 </p>
                                             </div>
 
                                             <div className="col-xs-6">
-                                                <h3>Xydrobe</h3>
+                                                <h3 className="subtitle">Rick’s Retro</h3>
                                                 <p>
-                                                    After OTHERWORLD I worked as an independent contractor helping Xydrobe to launch their immersive VR experience in Harrods London. (<b>Unity</b>, <b>Node</b>, <b>Electronics</b>)
-                                                </p>
-
-                                                <h3>More</h3>
-                                                <p>
-                                                    <a rel="noopener noreferrer" href="https://luc.io/portfolio/" target="_blank">Portfolio</a> — You can find my other projects on my portfolio page, including the handheld synthesiser I made in 2016: <a rel="noopener noreferrer" href="https://luc.io/portfolio/#monopad" target="_blank">Monopad</a> (<b>DSP</b>, <b>Arduino</b>, <b>C++</b>, <b>Electronics</b>).
+                                                    <a rel="noopener noreferrer" href="https://luc.io/portfolio/#ricks-retro" target="_blank">Rick’s Retro</a> is an eCommerce site I built for independent vintage clothes business Rick’s Retro. I built everything from the ground up (products, orders, payments, etc.) and the site facilitated their business for 7 years before they migrated to a new site. It was completely custom because they needed a unique back-end flow that wasn't available off the shelf. (<b>Node</b>, <b>Express</b>, <b>MongoDB</b>, <b>jQuery</b>, <b>Redis</b>, <b>SASS</b>)
                                                 </p>
                                             </div>
                                         </div>
@@ -271,28 +264,31 @@ class CVPage extends Component {
 
                                     <div className="row">
                                         <div className="col-xs-6">
-                                            <h3>Technologies</h3>
+                                            <h3 className="subtitle">Technologies</h3>
                                             <p>
-                                                JavaScript (TypeScript), Node.js, MongoDB, React, Amazon Web Services (AWS), Google Cloud Platform (GCP), HTML, (S)CSS, Git, Solana Blockchain, Solidity, Photography, Processing, Java, C++, PHP, MySQL, DSP, openFrameworks, Unity3D, C#, UNIX, Python, Arduino & Electronics, Photoshop, Premiere, Lightroom.
+                                                Most confident with: <b>JavaScript (TypeScript)</b>, <b>Node</b>, <b>MongoDB</b>, <b>React</b>, <b>AWS</b>, <b>GCP</b>
+                                            </p>
+                                            <p>
+                                                Experience with and exposure to: <b>React Native</b>, <b>Expo</b>, <b>C++</b>, <b>C#</b>, <b>Python</b>, <b>Svelte</b>, <b>Web3</b>, <b>Solana Blockchain</b>, <b>Solidity</b>, <b>Unity3D</b>, <b>Unreal Engine</b>, <b>Three.js</b>, <b>MySQL</b>
                                             </p>
                                         </div>
                                         <div className="col-xs-6">
-                                            <h3>Interests and Hobbies</h3>
+                                            <h3 className="subtitle">Interests and Hobbies</h3>
                                             <p>
-                                                I love art, painting, and photography and I spend a lot of my time taking and editing photos, printing a photobook once a year of my best photos taken that year. I love travelling and hiking, having recently spent 5 months in Indonesia and India.
+                                                I love art, painting, and photography and I spend a lot time taking and editing photos. At the end of each year I print my favourite photos from the year into a hardback photobook. I love travelling and hiking, having recently spent 5 months in Indonesia and India.
                                             </p>
                                         </div>
                                     </div>
                                     <div className="row">
                                         <div className="col-xs-6">
-                                            <h3>Communication</h3>
+                                            <h3 className="subtitle">Communication</h3>
                                             <p>
-                                                Articulate with excellent communication skills.
+                                                Articulate with excellent communication skills and high verbal intelligence.
                                                 Strong attention to detail and keen to find elegant solutions to problems.
                                             </p>
                                         </div>
                                         <div className="col-xs-6">
-                                            <h3>Languages</h3>
+                                            <h3 className="subtitle">Languages</h3>
                                             <p>
                                                 English (native), Italian (fluent), Spanish (basic conversational), German (very basic), Japanese (very basic).
                                             </p>

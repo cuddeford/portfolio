@@ -2,7 +2,7 @@
     background: black;
     color: white;
     min-height: 100vh;
-    font-size: 0.95em;
+    font-size: 1.3em;
     /* hyphens: auto; */
 
     transition: background 0ms ease-in-out,
@@ -26,19 +26,24 @@
     text-align: center
 }
 
+.CVWrapper h3 {
+    font-size: 1.2em;
+}
+
 .CVWrapper h2 {
     text-transform: uppercase;
     font-stretch: condensed;
     font-weight: 800;
     letter-spacing: 3px;
-    margin-top: 30px;
+    margin-top: 50px;
+    font-size: 2em;
 }
 
 .CVContent {
     background: white;
     box-shadow: 0 10px 20px -1px rgba(0, 0, 0, 0.23);
 
-    padding-top: 90px;
+    padding-top: 70px;
     padding-bottom: 30px;
     padding-right: 50px;
     width: 1290px;
@@ -76,9 +81,14 @@
     background-size: 100% 3px;
 }
 
+.CVContent .subtitle {
+    font-weight: bold;
+}
+
 .CVSidebar {
     text-align: center;
     padding: 0 30px;
+    height: 2000px;
 }
 
 .CVSidebar img {
