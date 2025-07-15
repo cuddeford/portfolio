@@ -6,7 +6,7 @@
     .ProjectItemsColumn {
         padding: 0
     }
-    
+
     .ProjectItems {
         margin-left: -15px;
         margin-right: -15px;
@@ -18,4 +18,28 @@
     list-style: none;
     margin-bottom: 50px;
     position: sticky;
+}
+
+.project-category {
+    user-select: none;
+    cursor: pointer;
+
+    &.selected {
+        h2 {
+            background: white;
+            color: black;
+            border: 4px solid white;
+        }
+    }
+
+    h2 {
+        padding: 6px 12px;
+        background: transparent;
+        border: 4px dashed white;
+
+        > span {
+            float: right;
+            opacity: 0.5;
+        }
+    }
 }

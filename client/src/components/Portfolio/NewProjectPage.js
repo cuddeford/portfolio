@@ -12,22 +12,22 @@ class NewProjectPage extends Component {
         tags: [],
         description: 'An _exciting_ description\n\n<divider />'
     }
-    
+
     submitNewProject = async e => {
         e.preventDefault()
-        
+
         const formData = new FormData(e.target)
-        
-        var object = {};
+
+        var object = {}
         formData.forEach((value, key) => object[key] = value)
-        
+
         object.tags = object.tags ? object.tags.split(', ') : []
         object.public = !!object.public
-        
+
         if (!object.name) return console.log('Name is required')
         if (object.tags.length <= 0) return console.log('Tags are required')
         if (!object.description) return console.log('Description is required')
-        
+
         const createdProject = await fetch('/api/projects', {
             method: 'POST',
             headers: {
@@ -37,17 +37,17 @@ class NewProjectPage extends Component {
             credentials: 'include',
             body: JSON.stringify(object)
         })
-        
+
         const project = await createdProject.json()
         if (project.shortId) {
             await this.props.updateProjects()
             this.setState({
                 projectCreated: true,
-                createdProjectSlug: project.slug
+                createdProjectSlug: project.slug,
             })
         }
     }
-    
+
     toggleTag = tag => {
         this.setState(prevState => {
             prevState.tags.includes(tag)
@@ -57,15 +57,18 @@ class NewProjectPage extends Component {
             return { tags: prevState.tags }
         })
     }
-    
+
     addNewTagKeyPress = event => {
-        if (event.key !== 'Enter')
+        if (event.key !== 'Enter') {
             return
+        }
 
         event.preventDefault()
 
         const tag = event.target.value.toLowerCase().trim()
-        if (!tag) return
+        if (!tag) {
+            return
+        }
 
         if (this.props.addTag(tag)) {
             this.setState(prevState => {
@@ -76,14 +79,16 @@ class NewProjectPage extends Component {
 
         event.target.value = ''
     }
-    
+
     descriptionKeyPress = e => {
         const activeEl = document.activeElement
         const start = activeEl.selectionStart
         const end = activeEl.selectionEnd
 
         const wrap = chars => {
-            if (start === end) return
+            if (start === end) {
+                return
+            }
 
             let enabling = false
             this.setState(prevState => {
@@ -108,7 +113,7 @@ class NewProjectPage extends Component {
                 }
 
                 return {
-                    description: prevState.description
+                    description: prevState.description,
                 }
             }, () => enabling
                 ? activeEl.setSelectionRange(start, end + (chars.length * 2))
@@ -154,16 +159,16 @@ class NewProjectPage extends Component {
     }
 
     descriptionOnChange = e => this.setState({ description: e.target.value })
-    
+
     render() {
         if (this.state.projectCreated === true) {
             return <Redirect to={'/portfolio/#' + this.state.createdProjectSlug} />
         }
-        
+
         const content = (
             <form id='projectForm' onSubmit={this.submitNewProject}>
                 <br />
-                
+
                 <input type='text' style={{
                     textAlign: 'center',
                     fontSize: '1.5em',
@@ -171,11 +176,11 @@ class NewProjectPage extends Component {
                     fontWeight: 'bold',
                     letterSpacing: '2px'
                 }} name='name' placeholder='Name' />
-                
+
                 <input type='hidden' style={{
                     textAlign: 'center'
                 }} name='tags' placeholder='Tags' readOnly value={this.state.tags.join(', ')} />
-                
+
                 <div style={{ textAlign: 'center' }}>
                     {this.props.state.tags.map(tag => {
                         const hue = tag.colour.replace('hsla(', '').split(', ')[0]
@@ -208,9 +213,9 @@ class NewProjectPage extends Component {
                         />
                     </span>
                 </div>
-                
+
                 <br />
-                
+
                 <div className="row">
                     <div className="col-xs-12 col-md-6">
                         <textarea
@@ -228,7 +233,7 @@ class NewProjectPage extends Component {
                         />
                     </div>
                 </div>
-                
+
                 <br />
                 <div style={{ textAlign: 'center' }}>
                     <label>Public
@@ -239,7 +244,7 @@ class NewProjectPage extends Component {
                 <button className="btn btn-default" type='submit'>Submit</button>
             </form>
         )
-        
+
         return (
             <Page
                 pageName={'Add Project'}

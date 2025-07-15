@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 
 import Page from '../Page'
 import './PortfolioPage.css'
@@ -17,42 +18,74 @@ const PortfolioPage = props => {
 
     const tagBtnClass = tag => {
         const classes = []
-        if (props.state.selectedTags.includes(tag))
+        if (props.state.selectedTags.includes(tag)) {
             classes.push('selected', 'active')
+        }
 
-        if (!props.state.possibleTags.includes(tag))
+        if (!props.state.possibleTags.includes(tag)) {
             classes.push('disabled')
-        
+        }
+
         if (props.previewingTags.length > 0) {
-            if (props.previewingTags.includes(tag))
+            if (props.previewingTags.includes(tag)) {
                 classes.push('previewing')
-            else
+            } else {
                 classes.push('notPreviewing')
+            }
         }
 
         return classes.join(' ')
     }
 
     const projectItemClass = _project => {
-        if (props.state.selectedTags.length <= 0) return ' matched'
+        if (props.state.selectedTags.length <= 0) {
+            return ' matched'
+        }
 
-        for (const selectedTag of props.state.selectedTags)
-            if (!_project.tags.includes(selectedTag)) return ''
+        for (const selectedTag of props.state.selectedTags) {
+            if (!_project.tags.includes(selectedTag)) {
+                return ''
+            }
+        }
 
         return ' matched'
     }
 
     const projectItemTagClass = tag => {
-        for (const selectedTag of props.state.selectedTags)
-            if (tag === selectedTag) return ' matched'
+        for (const selectedTag of props.state.selectedTags) {
+            if (tag === selectedTag) {
+                return ' matched'
+            }
+        }
 
         return ''
     }
 
     const getTagColour = tag => {
-        if (props.state.tags.length <= 0) return
+        if (props.state.tags.length <= 0) {
+            return
+        }
+
         return props.state.tags.find(t => t.tag === tag).colour
     }
+
+    // we need to create seperate chunks for each category found in the projects then render a button to toggle it
+    // and a <ProjectItems /> block underneath each.
+    // projects have a categories array with possible values "software", "hardware", "art"
+
+    const projectsByCategory = projects.reduce((acc, project) => {
+        project.categories.forEach(category => {
+            if (!acc[category]) {
+                acc[category] = []
+            }
+            acc[category].push(project)
+        })
+        return acc
+    }, {})
+
+    console.log(projectsByCategory)
+
+    const [selectedCategories, setSelectedCategories] = useState(['software'])
 
     const content = (
         <div>
@@ -61,10 +94,13 @@ const PortfolioPage = props => {
                 selectTagHandler={props.selectTagHandler}
                 tags={props.state.tags}
             />
-            
+
             <ProjectItems
                 admin={props.state.admin}
                 projects={projects}
+                projectsByCategory={projectsByCategory}
+                // selectedCategories={selectedCategories}
+                // setSelectedCategories={setSelectedCategories}
                 projectSlug={projectSlug}
                 projectItemClass={projectItemClass}
                 projectItemTagClass={projectItemTagClass}
@@ -76,7 +112,7 @@ const PortfolioPage = props => {
                 moveProjectDown={props.moveProjectDown}
                 deleteProject={props.deleteProject}
             />
-            
+
             <ProjectViewer
                 defaultProject={projects[0]}
                 selectedProject={selectedProject}
