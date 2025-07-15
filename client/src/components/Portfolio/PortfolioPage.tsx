@@ -69,10 +69,6 @@ const PortfolioPage = props => {
         return props.state.tags.find(t => t.tag === tag).colour
     }
 
-    // we need to create seperate chunks for each category found in the projects then render a button to toggle it
-    // and a <ProjectItems /> block underneath each.
-    // projects have a categories array with possible values "software", "hardware", "art"
-
     const projectsByCategory = projects.reduce((acc, project) => {
         project.categories.forEach(category => {
             if (!acc[category]) {
@@ -86,13 +82,28 @@ const PortfolioPage = props => {
     console.log(projectsByCategory)
 
     const [selectedCategories, setSelectedCategories] = useState(['software'])
+    const tags = selectedCategories.reduce((allTags, category) => {
+        if (projectsByCategory[category]) {
+            projectsByCategory[category].forEach(project => {
+                project.tags.forEach(tag => {
+                    if (!allTags.includes(tag)) {
+                        allTags.push(tag)
+                    }
+                })
+            })
+        }
+        return allTags
+    }, [])
+
+    const tagsToShow = props.state.tags.filter(t => tags.includes(t.tag))
 
     const content = (
         <div>
             <ProjectTags
                 tagBtnClass={tagBtnClass}
                 selectTagHandler={props.selectTagHandler}
-                tags={props.state.tags}
+                // tags={props.state.tags}
+                tags={tagsToShow}
             />
 
             <ProjectItems

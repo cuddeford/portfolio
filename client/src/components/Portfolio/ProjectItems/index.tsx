@@ -5,19 +5,51 @@ import ProjectItemsAddBtn from './ProjectItemsAddBtn/'
 
 import './ProjectItems.css'
 
-const CategorySection = ({ category, projects, children }) => (
-    <div className="project-category">
-        <h2>{category.charAt(0).toUpperCase() + category.slice(1)} <span>{projects.length}</span></h2>
-        {children}
-    </div>
-)
+const CategorySection = props => {
+    const { category, projects, children, selectedCategories, setSelectedCategories } = props
+
+    if (!projects.length) {
+        return null
+    }
+
+    const iAmSelected = selectedCategories.includes(category)
+    const toggleCategory = () => {
+        if (iAmSelected) {
+            setSelectedCategories(selectedCategories.filter(c => c !== category))
+        } else {
+            setSelectedCategories([...selectedCategories, category])
+        }
+    }
+
+    return (
+        <div
+            className={`project-category ${iAmSelected ? 'selected' : ''}`}
+            onClick={toggleCategory}
+        >
+            <h2>
+                {category.charAt(0).toUpperCase() + category.slice(1)} <span>
+                    {projects.length}
+                    <span>{iAmSelected ? ' ∧' : ' ∨'}</span>
+                </span>
+            </h2>
+            {iAmSelected ? children : null}
+        </div>
+    )
+}
 
 const projectItems = props => {
+    const { selectedCategories, setSelectedCategories } = props
+
     return (
         <div className="col-xs-12 col-sm-4 col-lg-3 ProjectItemsColumn">
             <ul className="ProjectItems">
                 {Object.entries(props.projectsByCategory).map(([category, projects]) => (
-                    <CategorySection key={category} category={category} projects={projects}>
+                    <CategorySection
+                        key={category}
+                        category={category} projects={projects}
+                        selectedCategories={selectedCategories}
+                        setSelectedCategories={setSelectedCategories}
+                    >
                         {projects.map(project => (
                             <ProjectItem
                                 key={project.shortId}
