@@ -31,13 +31,6 @@
 
 }
 
-.project-category.project-showing,
-.project-category.selected {
-    .ProjectItem.spacer {
-        margin-top: 25px;
-    }
-}
-
 .project-category.project-showing:not(.selected) {
     .ProjectItem.matched {
         margin-top: 0 !important;
@@ -75,11 +68,12 @@
     max-height: 200px;
 }
 
-.ProjectItem + .ProjectItem {
+/* .ProjectItem + .ProjectItem {
     margin-top: 15px;
-}
+} */
 
 .ProjectItem.matched {
+    margin-bottom: 15px;
     pointer-events: initial;
     font-size: 1.4em;
     max-height: 200px;

@@ -80,9 +80,6 @@ const projectItems = props => {
                                     deleteProject={props.deleteProject}
                                 />
                             })}
-
-                            {/* this acts as a spacer for the bottom of the category because padding and margin were breaking the animations */}
-                            <li className="ProjectItem spacer"></li>
                         </CategorySection>
                     )
                 })}
