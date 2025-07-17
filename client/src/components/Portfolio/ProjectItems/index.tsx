@@ -33,16 +33,21 @@ const CategorySection = props => {
 
     return (
         <div className={`project-category ${iAmSelected ? 'selected' : ''} ${anyProjectIsShowing ? ' project-showing' : ''}`}>
-            <h4 className='project-category-title' onClick={toggleCategory}>
+            <h4 className='project-category-title' onClick={toggleCategory} style={{ fontWeight: category === 'pinned' ? 'bold' : 'normal' }}>
                 <FontAwesomeIcon icon={emoji[category]} fixedWidth />
                 {' '}
-                {category.charAt(0).toUpperCase() + category.slice(1)} <span>
+                <span>
+                    {category.charAt(0).toUpperCase() + category.slice(1)}
+                </span>
+                <span>
                     {projects.length}
                     {' '}
                     <FontAwesomeIcon icon={iAmSelected ? faChevronUp : faChevronDown} size='xs' fixedWidth />
                 </span>
             </h4>
+
             {children}
+
             <div className='second-border'></div>
         </div>
     )

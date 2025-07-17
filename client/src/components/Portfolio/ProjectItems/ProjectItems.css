@@ -58,7 +58,7 @@
         margin: 0;
         padding: 12px;
 
-        > span {
+        > span:last-child {
             float: right;
             opacity: 0.5;
         }
