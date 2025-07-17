@@ -1,6 +1,7 @@
 .ProjectTagsColumn {
     padding-left: 0;
     padding-right: 0;
+    min-height: 100.66px;
 }
 
 .ProjectTags {
@@ -14,7 +15,7 @@
     .ProjectTagsColumn {
         padding: 0
     }
-    
+
     .ProjectTags {
         margin-top: 15px;
         margin-bottom: 20px;
