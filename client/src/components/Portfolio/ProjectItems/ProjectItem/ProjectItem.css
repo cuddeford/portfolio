@@ -31,9 +31,16 @@
 
 }
 
+.project-category.project-showing,
 .project-category.selected {
     .ProjectItem.spacer {
         margin-top: 25px;
+    }
+}
+
+.project-category.project-showing:not(.selected) {
+    .ProjectItem.matched {
+        margin-top: 0 !important;
     }
 }
 

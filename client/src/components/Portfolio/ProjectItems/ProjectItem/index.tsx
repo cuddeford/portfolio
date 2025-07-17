@@ -31,6 +31,10 @@ const projectItem = props => {
         className = className.replace(/\ matched/g, '')
     }
 
+    if (projectIsSelected) {
+        className += ' matched'
+    }
+
     return (
         <li
             className={className}
