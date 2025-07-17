@@ -13,10 +13,10 @@ import './ProjectViewer.css'
 
 const projectViewer = props => {
     const project = props.selectedProject
-    
+
     if (!project)
         return <Redirect to={"/portfolio/#" + props.defaultProject.slug} />
-    
+
     return (
         <div className="col-xs-12 col-sm-8 col-lg-9 ProjectViewerColumn">
             <TransitionGroup>
@@ -24,11 +24,11 @@ const projectViewer = props => {
                     key={project.shortId}
                     timeout={5000}
                     classNames='changeProject'
-                    onExit={() => props.changingProjectHandler(true) || window.scroll({
-                        behavior: 'smooth',
-                        left: 0,
-                        top: document.querySelector('.ProjectViewer').getBoundingClientRect().top + window.scrollY - 35
-                    })}
+                    // onExit={() => props.changingProjectHandler(true) || window.scroll({
+                    //     behavior: 'smooth',
+                    //     left: 0,
+                    //     top: document.querySelector('.ProjectViewer').getBoundingClientRect().top + window.scrollY - 35
+                    // })}
                     onEntered={() => props.changingProjectHandler(false)}
                 >
                     <div className="ProjectViewer">
@@ -39,7 +39,7 @@ const projectViewer = props => {
                                 projectItemTagClass={props.projectItemTagClass}
                                 getTagColour={props.getTagColour}
                             />}</div>
-                            
+
                             <div className="ProjectDescription">
                                 {<Markdown
                                     escapeHtml={false}
