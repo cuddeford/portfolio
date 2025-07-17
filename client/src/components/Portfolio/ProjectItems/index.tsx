@@ -76,7 +76,7 @@ const projectItems = props => {
                         })}
 
                         {/* this acts as a spacer for the bottom of the category because padding and margin were breaking the animations */}
-                        <li className="ProjectItem"></li>
+                        <li className="ProjectItem spacer"></li>
                     </CategorySection>
                 ))}
 

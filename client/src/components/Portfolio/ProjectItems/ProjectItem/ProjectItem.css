@@ -32,8 +32,8 @@
 }
 
 .project-category.selected {
-    .ProjectItem:last-of-type {
-        margin-top: 20px;
+    .ProjectItem.spacer {
+        margin-top: 25px;
     }
 }
 
@@ -69,11 +69,6 @@
 }
 
 .ProjectItem + .ProjectItem {
-    margin-top: 0px;
-    margin: 0;
-}
-
-.ProjectItem.matched + .ProjectItem {
     margin-top: 15px;
 }
 
@@ -95,6 +90,10 @@
         filter 500ms ease-in-out 0.3s,
         color 0.1s ease-in-out,
         background 0s ease-in-out;
+}
+
+.ProjectItem:not(.matched) {
+    margin-top: 0;
 }
 
 .ProjectItemName {
