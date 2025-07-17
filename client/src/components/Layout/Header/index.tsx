@@ -3,7 +3,11 @@ import { NavLink } from 'react-router-dom'
 
 import './Header.css'
 
-class Header extends Component {
+interface Props {
+    admin: boolean
+}
+
+class Header extends Component<Props> {
     state = {
         images: [
             {

@@ -4,7 +4,14 @@ import Page from '../Page'
 
 import './CVPage.css'
 
-class CVPage extends Component {
+interface Props {
+    state: {
+        baseTitle: string
+    },
+    toggleLayout: (show: boolean) => void
+}
+
+class CVPage extends Component<Props> {
     componentDidMount() {
         this.props.toggleLayout(false)
     }

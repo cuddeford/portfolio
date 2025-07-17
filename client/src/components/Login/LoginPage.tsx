@@ -2,14 +2,22 @@ import React from 'react'
 
 import Page from '../Page'
 
-const loginPage = props => {
-    
-    const submitForm = async e => {
+interface Props {
+    state: {
+        baseTitle: string
+    },
+    setAdmin: (admin: boolean) => void,
+    history: any
+}
+
+const loginPage = (props: Props) => {
+
+    const submitForm = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
         const formData = new FormData(e.target)
 
-        var object = {};
+        var object: {[key: string]: any} = {};
         formData.forEach((value, key) => object[key] = value)
 
         if (!object.username) return console.log('Username is required')
@@ -26,12 +34,12 @@ const loginPage = props => {
         })
 
         const attempt = await login.json()
-        
+
         return attempt.success
             ? (props.setAdmin(true), props.history.push('/'))
             : alert(attempt.error)
     }
-    
+
     const content = (
         <form method="POST" onSubmit={submitForm}>
             <h2 style={{ textAlign: 'center' }}>Login</h2>
@@ -42,7 +50,7 @@ const loginPage = props => {
             <button type="submit" className="btn btn-default">Log in</button>
         </form>
     )
-    
+
     return (
         <Page
             pageName={'Login'}

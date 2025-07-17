@@ -3,7 +3,14 @@ import React from 'react'
 import Header from './Header/'
 import Footer from './Footer/'
 
-const layout = props => {
+interface Props {
+    showLayout: boolean,
+    admin: boolean,
+    children: React.ReactNode,
+    changingProject: boolean
+}
+
+const layout = (props: Props) => {
     if (!props.showLayout) return props.children
     
     return (

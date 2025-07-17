@@ -5,7 +5,13 @@ import Page from '../Page'
 
 import './ContactPage.css'
 
-const ContactPage = props => {
+interface Props {
+    state: {
+        baseTitle: string
+    }
+}
+
+const ContactPage = (props: Props) => {
     const content = (
         <div>
             <div className="ContactPage">

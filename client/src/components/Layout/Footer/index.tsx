@@ -2,7 +2,11 @@ import React from 'react'
 
 import './Footer.css'
 
-const footer = props => {
+interface Props {
+    changingProject: boolean
+}
+
+const footer = (props: Props) => {
     const classes = ['row']
     if (props.changingProject) {
         classes.push('footerChangingProject')
