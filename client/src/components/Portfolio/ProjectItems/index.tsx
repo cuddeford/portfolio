@@ -22,11 +22,8 @@ const CategorySection = props => {
     }
 
     return (
-        <div
-            className={`project-category ${iAmSelected ? 'selected' : ''}`}
-            onClick={toggleCategory}
-        >
-            <h2>
+        <div className={`project-category ${iAmSelected ? 'selected' : ''}`}>
+            <h2 onClick={toggleCategory}>
                 {category.charAt(0).toUpperCase() + category.slice(1)} <span>
                     {projects.length}
                     <span>{iAmSelected ? ' ∧' : ' ∨'}</span>
