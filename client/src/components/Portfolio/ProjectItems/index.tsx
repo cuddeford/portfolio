@@ -33,7 +33,7 @@ const CategorySection = props => {
                     {projects.length}
                 </span>
             </h2>
-            {iAmSelected ? children : null}
+            {children}
             <div className='second-border'></div>
         </div>
     )
@@ -52,12 +52,17 @@ const projectItems = props => {
                         selectedCategories={selectedCategories}
                         setSelectedCategories={setSelectedCategories}
                     >
-                        {projects.map(project => (
-                            <ProjectItem
+                        {projects.map(project => {
+                            const categoryIsSelected = selectedCategories.includes(category)
+                            const projectIsSelected = props.selectedProject.shortId === project.shortId
+
+                            return <ProjectItem
                                 key={project.shortId}
                                 admin={props.admin}
                                 project={project}
                                 projectSlug={props.projectSlug}
+                                projectIsSelected={projectIsSelected}
+                                categoryIsSelected={categoryIsSelected}
                                 projectItemClass={props.projectItemClass}
                                 projectItemTagClass={props.projectItemTagClass}
                                 setPreviewingTags={props.setPreviewingTags}
@@ -68,7 +73,10 @@ const projectItems = props => {
                                 moveProjectDown={props.moveProjectDown}
                                 deleteProject={props.deleteProject}
                             />
-                        ))}
+                        })}
+
+                        {/* this acts as a spacer for the bottom of the category because padding and margin were breaking the animations */}
+                        <li className="ProjectItem"></li>
                     </CategorySection>
                 ))}
 

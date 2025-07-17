@@ -31,6 +31,12 @@
 
 }
 
+.project-category.selected {
+    .ProjectItem:last-of-type {
+        margin-top: 20px;
+    }
+}
+
 .ProjectItem > a {
     text-align: left;
     font-weight: bold;

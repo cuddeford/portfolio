@@ -93,7 +93,7 @@ const PortfolioPage = props => {
         return allTags
     }, [])
 
-    const tagsToShow = props.state.tags.filter(t => tags.includes(t.tag))
+    const tagsToShow = props.state.tags/* .filter(t => tags.includes(t.tag)) */
 
     const content = (
         <div>
@@ -107,6 +107,7 @@ const PortfolioPage = props => {
             <ProjectItems
                 admin={props.state.admin}
                 projects={projects}
+                selectedProject={selectedProject}
                 projectsByCategory={projectsByCategory}
                 selectedCategories={selectedCategories}
                 setSelectedCategories={setSelectedCategories}

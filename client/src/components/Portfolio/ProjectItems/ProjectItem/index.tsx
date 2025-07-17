@@ -7,39 +7,61 @@ import ProjectItemAdminActions from './ProjectItemAdminActions/'
 import './ProjectItem.css'
 
 const projectItem = props => {
-    const { project } = props
-    
+    const {
+        project,
+        projectItemClass,
+        categoryIsSelected,
+        projectIsSelected,
+        setPreviewingTags,
+        resetPreviewingTags,
+        projectSlug,
+        projectItemTagClass,
+        getTagColour,
+        togglePublic,
+        moveProjectUp,
+        moveProjectDown,
+        deleteProject,
+        admin,
+    } = props
+
+    let className = 'ProjectItem' + projectItemClass(project) + (!project.public ? ' private' : '')
+
+    // show the selected project in all it's categories even if the category is not selected
+    if (!categoryIsSelected && !projectIsSelected) {
+        className = className.replace(/\ matched/g, '')
+    }
+
     return (
         <li
-            className={'ProjectItem' + props.projectItemClass(project) + (!project.public ? ' private' : '')}
-            onMouseOver={(e) => props.setPreviewingTags(e, project.tags)}
-            onTouchStart={(e) => props.setPreviewingTags(e, project.tags)}
-            onMouseOut={props.resetPreviewingTags}
-            onTouchEnd={props.resetPreviewingTags}
+            className={className}
+            onMouseOver={(e) => setPreviewingTags(e, project.tags)}
+            onTouchStart={(e) => setPreviewingTags(e, project.tags)}
+            onMouseOut={resetPreviewingTags}
+            onTouchEnd={resetPreviewingTags}
         >
             <NavLink
                 className="btn btn-block"
                 activeClassName="active"
-                isActive={() => props.projectSlug === project.slug}
+                isActive={() => projectSlug === project.slug}
                 to={"/portfolio/#" + project.slug}>
-                
+
                 <span className="ProjectItemName">{project.name}</span>
-                
-                {props.admin
+
+                {admin
                     ? <ProjectItemAdminActions
                         shortId={project.shortId}
                         public={project.public}
-                        togglePublic={e => props.togglePublic(e, project.shortId)}
-                        moveProjectUp={e => props.moveProjectUp(e, project.shortId)}
-                        moveProjectDown={e => props.moveProjectDown(e, project.shortId)}
-                        deleteProject={e => props.deleteProject(e, project.shortId)}
+                        togglePublic={e => togglePublic(e, project.shortId)}
+                        moveProjectUp={e => moveProjectUp(e, project.shortId)}
+                        moveProjectDown={e => moveProjectDown(e, project.shortId)}
+                        deleteProject={e => deleteProject(e, project.shortId)}
                       />
                     : null}
-                
+
                 <ProjectItemTags
                     tags={project.tags}
-                    projectItemTagClass={props.projectItemTagClass}
-                    getTagColour={props.getTagColour}
+                    projectItemTagClass={projectItemTagClass}
+                    getTagColour={getTagColour}
                 />
             </NavLink>
         </li>
