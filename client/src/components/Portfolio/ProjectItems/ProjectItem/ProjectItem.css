@@ -68,10 +68,6 @@
     max-height: 200px;
 }
 
-/* .ProjectItem + .ProjectItem {
-    margin-top: 15px;
-} */
-
 .ProjectItem.matched {
     margin-bottom: 25px;
     pointer-events: initial;
