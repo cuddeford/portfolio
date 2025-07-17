@@ -34,6 +34,7 @@ const CategorySection = props => {
                 </span>
             </h2>
             {iAmSelected ? children : null}
+            <div className='second-border'></div>
         </div>
     )
 }
