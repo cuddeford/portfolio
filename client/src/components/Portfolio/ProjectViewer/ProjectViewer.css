@@ -76,7 +76,7 @@ divider {
     column-span: all;
     display: block;
 }
-    
+
 divider::before {
     content: '&';
     text-align: center;
@@ -85,10 +85,10 @@ divider::before {
     position: absolute;
     left: 0;
     right: 0;
-    
+
     pointer-events: none;
     color: white !important;
-    
+
     opacity: 0.7;
 }
 
@@ -106,7 +106,7 @@ divider::before {
     /* margin-top: 30px; */
     margin-bottom: 30px;
     column-span: all;
-    
+
     transition: background 100ms ease-in-out,
         color 100ms ease-in-out,
         border-color 100ms ease-in-out;
@@ -158,8 +158,8 @@ divider::before {
 .changeProject-enter-active .ProjectViewerTag {
     opacity: 1;
     filter: blur(0px);
-    transition: opacity 2000ms ease-in-out 2000ms,
-        filter 1500ms ease-in-out 2500ms
+    transition: opacity 2000ms ease-in-out 0ms,
+        filter 1500ms ease-in-out 1000ms
 }
 
 .changeProject-exit {
@@ -183,17 +183,17 @@ divider::before {
     .ProjectViewerColumn {
         padding: 0;
     }
-    
+
     .ProjectViewer .ProjectName {
         margin-left: -15px;
         margin-right: -15px;
     }
-    
+
     .ProjectViewer img {
         margin-left: -15px;
         max-width: 100vw
     }
-    
+
     .ProjectViewer .embed-responsive {
         margin-left: -15px;
         margin-right: -15px;
