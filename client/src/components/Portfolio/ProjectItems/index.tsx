@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown, faChevronUp, faCloud, faHeart, faMicrochip, faPalette } from '@fortawesome/free-solid-svg-icons'
 
 import ProjectItem from './ProjectItem/'
 import ProjectItemsAddBtn from './ProjectItemsAddBtn/'
@@ -24,15 +24,24 @@ const CategorySection = props => {
         }
     }
 
+    const emoji: { [key: string]: any } = {
+        'pinned': faHeart,
+        'software': faCloud,
+        'hardware': faMicrochip,
+        'art': faPalette,
+    }
+
     return (
         <div className={`project-category ${iAmSelected ? 'selected' : ''} ${anyProjectIsShowing ? ' project-showing' : ''}`}>
-            <h2 onClick={toggleCategory}>
-                <FontAwesomeIcon icon={iAmSelected ? faChevronUp : faChevronDown} size='xs' fixedWidth />
+            <h4 className='project-category-title' onClick={toggleCategory}>
+                <FontAwesomeIcon icon={emoji[category]} fixedWidth />
                 {' '}
                 {category.charAt(0).toUpperCase() + category.slice(1)} <span>
                     {projects.length}
+                    {' '}
+                    <FontAwesomeIcon icon={iAmSelected ? faChevronUp : faChevronDown} size='xs' fixedWidth />
                 </span>
-            </h2>
+            </h4>
             {children}
             <div className='second-border'></div>
         </div>
