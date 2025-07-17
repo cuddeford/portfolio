@@ -1,5 +1,8 @@
 import React from 'react'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
+
 import ProjectItem from './ProjectItem/'
 import ProjectItemsAddBtn from './ProjectItemsAddBtn/'
 
@@ -24,9 +27,10 @@ const CategorySection = props => {
     return (
         <div className={`project-category ${iAmSelected ? 'selected' : ''}`}>
             <h2 onClick={toggleCategory}>
+                <FontAwesomeIcon icon={iAmSelected ? faChevronUp : faChevronDown} size='xs' fixedWidth />
+                {' '}
                 {category.charAt(0).toUpperCase() + category.slice(1)} <span>
                     {projects.length}
-                    <span>{iAmSelected ? ' ∧' : ' ∨'}</span>
                 </span>
             </h2>
             {iAmSelected ? children : null}
