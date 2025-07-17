@@ -73,7 +73,7 @@
 } */
 
 .ProjectItem.matched {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     pointer-events: initial;
     font-size: 1.4em;
     max-height: 200px;
