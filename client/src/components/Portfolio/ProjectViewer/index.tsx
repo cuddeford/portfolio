@@ -34,17 +34,19 @@ const projectViewer = props => {
                     <div className="ProjectViewer">
                         <div>
                             <h1 className="ProjectName">{project.name}</h1>
-                            <div>{<ProjectViewerTags
-                                tags={project.tags}
-                                projectItemTagClass={props.projectItemTagClass}
-                                getTagColour={props.getTagColour}
-                            />}</div>
+                            <div>
+                                <ProjectViewerTags
+                                    tags={project.tags}
+                                    projectItemTagClass={props.projectItemTagClass}
+                                    getTagColour={props.getTagColour}
+                                />
+                            </div>
 
                             <div className="ProjectDescription">
-                                {<Markdown
+                                <Markdown
                                     escapeHtml={false}
                                     source={project.description}
-                                />}
+                                />
                             </div>
                         </div>
                     </div>
