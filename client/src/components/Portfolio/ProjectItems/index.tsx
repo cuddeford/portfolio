@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useLayoutEffect, useEffect } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faChevronUp, faCloud, faHeart, faMicrochip, faPalette } from '@fortawesome/free-solid-svg-icons'
@@ -11,6 +11,20 @@ import './ProjectItems.css'
 const CategorySection = props => {
     const { category, projects, children, selectedCategories, setSelectedCategories, anyProjectIsShowing } = props
 
+    const listRef = useRef<HTMLDivElement | null>(null)
+    useLayoutEffect(() => {
+        if (listRef.current) {
+            const listHeight = listRef.current.scrollHeight
+            const maxHeight = Number(getComputedStyle(listRef.current).maxHeight.replace('px', ''))
+
+            if (listHeight > maxHeight) {
+                listRef.current.classList.add('show-fader')
+            } else {
+                listRef.current.classList.remove('show-fader')
+            }
+        }
+    }, [selectedCategories])
+
     if (!projects.length) {
         return null
     }
@@ -22,6 +36,19 @@ const CategorySection = props => {
         } else {
             setSelectedCategories([...selectedCategories, category])
         }
+
+        setTimeout(() => {
+            if (listRef.current) {
+                const listHeight = listRef.current.scrollHeight
+                const maxHeight = Number(getComputedStyle(listRef.current).maxHeight.replace('px', ''))
+
+                if (listHeight > maxHeight) {
+                    listRef.current.classList.add('show-fader')
+                } else {
+                    listRef.current.classList.remove('show-fader')
+                }
+            }
+        }, 1000)
     }
 
     const emoji: { [key: string]: any } = {
@@ -46,7 +73,18 @@ const CategorySection = props => {
                 </span>
             </h4>
 
-            {children}
+            <div className="ProjectItemsList" ref={listRef} onScroll={e => {
+                const target = e.target
+                if (target.scrollHeight - target.scrollTop <= target.clientHeight + 1) {
+                    // User has scrolled to bottom
+                    target.classList.remove('show-fader')
+                } else {
+                    // User is not at bottom
+                    target.classList.add('show-fader')
+                }
+            }}>
+                {children}
+            </div>
 
             <div className='second-border'></div>
         </div>
