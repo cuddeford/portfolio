@@ -31,7 +31,7 @@
 #App-title {
     margin: 0;
     font-family: 'Futura';
-    
+
     /* background: url("https://scontent-lga3-1.cdninstagram.com/vp/ae5f74aa5ea3bdf87d5463af6f4e592a/5BCDA6C1/t51.2885-15/e15/11191172_1429366180699904_842608976_n.jpg?dl=1") center; */
     /* -webkit-background-clip: text; */
     /* color: transparent; */
@@ -56,7 +56,7 @@
     background-position-y: center;
     display: inline-block;
     transform: translateY(0) scale(1);
-    
+
     transition: opacity 2000ms ease-in-out,
         filter 2000ms ease-in-out,
         transform 2000ms ease-in-out;
@@ -76,18 +76,18 @@
 }
 
 .PortfolioLink {
-    right: 383px
+    right: 440px
 }
 
 .ContactLink {
-    left: 383px
+    left: 440px
 }
 
 @media (min-width: 768px) {
     .App-header nav {
         top: 28px;
     }
-    
+
     .PortfolioLink {
         font-size: 1.2em;
     }
@@ -101,11 +101,11 @@
     #App-title {
         font-size: 4em
     }
-    
+
     .App-header nav {
         top: 23px;
     }
-    
+
     .PortfolioLink {
         right: 341px;
         font-size: 1.3em;
@@ -121,11 +121,11 @@
     #App-title {
         font-size: 3.5em
     }
-    
+
     .App-header nav {
         top: 19px;
     }
-    
+
     .PortfolioLink {
         right: 300px
     }
@@ -139,11 +139,11 @@
     #App-title {
         font-size: 3em
     }
-    
+
     .App-header nav {
         top: 17px;
     }
-    
+
     .PortfolioLink {
         right: 257px;
         font-size: 1.3em;
@@ -159,11 +159,11 @@
     #App-title {
         font-size: 2.5em
     }
-    
+
     .App-header nav {
         top: 17px;
     }
-    
+
     .PortfolioLink {
         right: 208px;
         font-size: 1.5em;
@@ -187,13 +187,13 @@
 
 .HeaderNavItem a {
     padding: 15px;
-    color: white;
+    color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
-    font-family: Spirax;
-    
+    font-weight: lighter;
+
     transition: color 200ms ease-in-out
 }
 
-.HeaderNavItem a:hover {
-    color: rgba(255, 255, 255, 0.801)
+.HeaderNavItem a.active, .HeaderNavItem a:hover {
+    color: white;
 }
