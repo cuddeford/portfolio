@@ -74,7 +74,7 @@
     font-size: 1.4em;
     max-height: 200px;
     opacity: 1;
-    transform: translateY(0) translateZ(0);
+    transform: translateY(0);
     color: white;
     border: none;
     filter: blur(0px);
