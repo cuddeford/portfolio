@@ -1,8 +1,9 @@
-import React, { useRef, useLayoutEffect, useEffect } from 'react'
+import React, { useRef, useLayoutEffect } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faChevronUp, faCloud, faHeart, faMicrochip, faPalette } from '@fortawesome/free-solid-svg-icons'
 
+import { useCustomEventHandler } from '../../../hooks/useCustomEvent'
 import ProjectItem from './ProjectItem/'
 import ProjectItemsAddBtn from './ProjectItemsAddBtn/'
 
@@ -69,6 +70,25 @@ const CategorySection = props => {
         }
     }, [selectedCategories])
 
+    const syncFaderAndScroll = () => {
+        setTimeout(() => {
+            if (parentRef.current && innerRef.current) {
+                const listHeight = innerRef.current.scrollHeight
+                const maxHeight = Number(getComputedStyle(innerRef.current).maxHeight.replace('px', ''))
+
+                if (listHeight > maxHeight) {
+                    parentRef.current.classList.add('show-fader')
+                    innerRef.current.style.overflowY = 'auto'
+                } else {
+                    parentRef.current.classList.remove('show-fader')
+                    innerRef.current.style.overflowY = 'hidden'
+                }
+            }
+        }, 1000)
+    }
+
+    useCustomEventHandler('sync-fader-and-scroll', syncFaderAndScroll, [])
+
     if (!projects.length) {
         return null
     }
@@ -91,20 +111,7 @@ const CategorySection = props => {
             smoothScrollTo(innerRef.current, 0, 200)
         }
 
-        setTimeout(() => {
-            if (parentRef.current && innerRef.current) {
-                const listHeight = innerRef.current.scrollHeight
-                const maxHeight = Number(getComputedStyle(innerRef.current).maxHeight.replace('px', ''))
-
-                if (listHeight > maxHeight) {
-                    parentRef.current.classList.add('show-fader')
-                    innerRef.current.style.overflowY = 'auto'
-                } else {
-                    parentRef.current.classList.remove('show-fader')
-                    innerRef.current.style.overflowY = 'hidden'
-                }
-            }
-        }, 1000)
+        syncFaderAndScroll()
     }
 
     const emoji: { [key: string]: any } = {

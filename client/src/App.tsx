@@ -122,6 +122,7 @@ class App extends Component {
 
         this.setState({ selectedTags: prevSelectedTags })
         this.setPossibleTags(prevSelectedTags)
+        window.dispatchEvent(new CustomEvent('sync-fader-and-scroll', { detail: [] }))
     }
 
     setPossibleTags = prevSelectedTags => {
