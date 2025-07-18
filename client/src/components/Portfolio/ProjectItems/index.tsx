@@ -100,15 +100,29 @@ const CategorySection = props => {
             if (parentRef.current) {
                 parentRef.current.classList.add('show-fader')
             }
+
+            if (innerRef.current) {
+                smoothScrollTo(innerRef.current, 0, 200)
+            }
         } else {
             setSelectedCategories([...selectedCategories, category])
             if (parentRef.current) {
                 parentRef.current.classList.remove('show-fader')
             }
-        }
 
-        if (parentRef.current) {
-            smoothScrollTo(innerRef.current, 0, 200)
+            // scroll to the selected project in the category
+            setTimeout(() => {
+                if (parentRef.current && innerRef.current) {
+                    const selectedProjectElement = innerRef.current.querySelector('a.active')
+                    if (selectedProjectElement) {
+                        const elRect = selectedProjectElement.getBoundingClientRect()
+                        const parentRect = innerRef.current.getBoundingClientRect()
+                        if (elRect.top < parentRect.top || elRect.bottom > parentRect.bottom) {
+                            smoothScrollTo(innerRef.current, elRect.top - parentRect.top, 200)
+                        }
+                    }
+                }
+            }, 1000)
         }
 
         syncFaderAndScroll()
