@@ -103,7 +103,7 @@ const CategorySection = props => {
     const iAmSelected = selectedCategories.includes(category)
     const toggleCategory = () => {
         if (iAmSelected) {
-            setSelectedCategories(selectedCategories.filter(c => c !== category))
+            setSelectedCategories([])
             if (parentRef.current) {
                 parentRef.current.classList.add('show-fader')
             }
@@ -112,7 +112,7 @@ const CategorySection = props => {
                 smoothScrollTo(innerRef.current, 0, 200)
             }
         } else {
-            setSelectedCategories([...selectedCategories, category])
+            setSelectedCategories([category])
             if (parentRef.current) {
                 parentRef.current.classList.remove('show-fader')
             }
