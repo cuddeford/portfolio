@@ -113,12 +113,13 @@ const CategorySection = props => {
             // scroll to the selected project in the category
             setTimeout(() => {
                 if (parentRef.current && innerRef.current) {
-                    const selectedProjectElement = innerRef.current.querySelector('a.active')
+                    const selectedProjectElement = innerRef.current.querySelector('a.active')?.parentElement
                     if (selectedProjectElement) {
                         const elRect = selectedProjectElement.getBoundingClientRect()
                         const parentRect = innerRef.current.getBoundingClientRect()
                         if (elRect.top < parentRect.top || elRect.bottom > parentRect.bottom) {
-                            smoothScrollTo(innerRef.current, elRect.top - parentRect.top, 200)
+                            const magicOffset = elRect.height * 1.7
+                            smoothScrollTo(innerRef.current, (elRect.top - parentRect.top) - magicOffset, 200)
                         }
                     }
                 }
