@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import React from 'react'
+import { NavLink, withRouter } from 'react-router-dom'
 
 import './Header.css'
 
@@ -66,10 +66,30 @@ const Header = (props: Props) => {
                         <nav>
                             <ul className="HeaderNav">
                                 <li className="HeaderNavItem PortfolioLink">
-                                    <NavLink to="/portfolio">Portfolio</NavLink>
+                                    <NavLink
+                                        to="/portfolio"
+                                        onClick={(e) => {
+                                            e.preventDefault()
+                                            document.startViewTransition(() => {
+                                                props.history.push('/portfolio')
+                                            })
+                                        }}
+                                    >
+                                        Portfolio
+                                    </NavLink>
                                 </li>
                                 <li className="HeaderNavItem ContactLink">
-                                    <NavLink to="/contact">Contact</NavLink>
+                                    <NavLink
+                                        to="/contact"
+                                        onClick={(e) => {
+                                            e.preventDefault()
+                                            document.startViewTransition(() => {
+                                                props.history.push('/contact')
+                                            })
+                                        }}
+                                    >
+                                        Contact
+                                    </NavLink>
                                 </li>
                             </ul>
                         </nav>
@@ -86,4 +106,4 @@ const Header = (props: Props) => {
     )
 }
 
-export default Header
+export default withRouter(Header)
