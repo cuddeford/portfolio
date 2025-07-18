@@ -82,12 +82,19 @@ const CategorySection = props => {
                 } else {
                     parentRef.current.classList.remove('show-fader')
                     innerRef.current.style.overflowY = 'hidden'
+                    smoothScrollTo(innerRef.current, 0, 200)
                 }
             }
         }, 1000)
     }
 
-    useCustomEventHandler('sync-fader-and-scroll', syncFaderAndScroll, [])
+    // hack to sync the fader and scroll position when changing tags
+    useCustomEventHandler('sync-fader-and-scroll', () => {
+        syncFaderAndScroll()
+        setTimeout(() => {
+            syncFaderAndScroll()
+        }, 500)
+    }, [])
 
     if (!projects.length) {
         return null
