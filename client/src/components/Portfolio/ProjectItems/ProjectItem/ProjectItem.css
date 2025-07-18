@@ -11,12 +11,12 @@
     padding: 0;
     margin: 0;
     opacity: 0;
-    transition: max-height 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
-        border-width 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
-        border-radius 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
-        padding 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
-        margin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
-        opacity 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    transition: max-height 1s var(--bounce-curve),
+        border-width 1s var(--bounce-curve),
+        border-radius 1s var(--bounce-curve),
+        padding 1s var(--bounce-curve),
+        margin 1s var(--bounce-curve),
+        opacity 1s var(--bounce-curve),
         filter 0.5s ease-in-out 0.2s,
         color 0.1s ease-in-out,
         background 0.1s ease-in-out;
@@ -48,8 +48,8 @@
     border: none;
     color: white;
     border-radius: 0;
-    transition: padding 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
-        max-height 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    transition: padding 1s var(--bounce-curve),
+        max-height 1s var(--bounce-curve),
         color 100ms ease-in-out,
         background 100ms ease-in-out
 }
@@ -78,12 +78,12 @@
     color: white;
     border: none;
     filter: blur(0px);
-    transition: max-height 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
-        border-width 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
-        border-radius 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
-        padding 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
-        margin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
-        opacity 1s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    transition: max-height 1s var(--bounce-curve),
+        border-width 1s var(--bounce-curve),
+        border-radius 1s var(--bounce-curve),
+        padding 1s var(--bounce-curve),
+        margin 1s var(--bounce-curve),
+        opacity 1s var(--bounce-curve),
         filter 500ms ease-in-out 0.3s,
         color 0.1s ease-in-out,
         background 0s ease-in-out;

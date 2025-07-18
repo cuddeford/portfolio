@@ -51,6 +51,11 @@
   font-stretch: condensed;
 }
 
+:root {
+  --original-bounce-curve: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --bounce-curve: cubic-bezier(0.68, -0.55, 0.265, 1.25);
+}
+
 body {
   margin: 0;
   padding: 0;
