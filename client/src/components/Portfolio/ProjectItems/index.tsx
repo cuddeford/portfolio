@@ -154,7 +154,13 @@ const CategorySection = props => {
                 <span>
                     {projects.length}
                     {' '}
-                    <FontAwesomeIcon icon={iAmSelected ? faChevronUp : faChevronDown} size='xs' fixedWidth />
+                    <FontAwesomeIcon
+                        icon={faChevronUp}
+                        size='xs'
+                        fixedWidth
+                        rotation={iAmSelected ? 180 : 0}
+                        style={{ transition: 'transform 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55)' }}
+                    />
                 </span>
             </h4>
 
