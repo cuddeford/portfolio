@@ -78,9 +78,16 @@
         transition: opacity 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
 
-    .ProjectItemsList {
-        max-height: 400px;
-        overflow-y: auto;
+    .project-category-overflow-wrapper {
+        overflow: hidden;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        position: relative;
+
+        .ProjectItemsList {
+            max-height: 400px;
+            overflow-y: auto;
+        }
 
         &::after {
             content: '';
@@ -92,8 +99,6 @@
             background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 1));
             opacity: 0;
             pointer-events: none;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
             transition: opacity 300ms ease-in-out;
         }
 
