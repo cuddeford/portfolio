@@ -62,7 +62,7 @@ const projectItems = props => {
                 {Object.entries(props.projectsByCategory).map(([category, projects]) => {
                     const categoryIsSelected = selectedCategories.includes(category)
                     const anyProjectIsShowing = projects.find(project => {
-                        return project.shortId === props.selectedProject.shortId
+                        return project.shortId === props?.selectedProject?.shortId
                     })
 
                     return (
@@ -74,7 +74,7 @@ const projectItems = props => {
                             anyProjectIsShowing={anyProjectIsShowing}
                         >
                             {projects.map(project => {
-                                const projectIsSelected = props.selectedProject.shortId === project.shortId
+                                const projectIsSelected = props?.selectedProject?.shortId === project.shortId
 
                                 return <ProjectItem
                                     key={project.shortId}
