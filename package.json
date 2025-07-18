@@ -5,7 +5,8 @@
         "client": "cd client && npm run start",
         "server": "cd server && npm run start",
         "database": "mongod",
-        "dev": "concurrently --kill-others-on-fail \"npm run database\" \"npm run server\" \"npm run client\""
+        "dev-with-db": "concurrently --kill-others-on-fail \"npm run database\" \"npm run server\" \"npm run client\"",
+        "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
     },
     "devDependencies": {
         "concurrently": "^3.6.0"
