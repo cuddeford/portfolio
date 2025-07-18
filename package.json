@@ -2,7 +2,7 @@
     "name": "portfolio-react",
     "version": "0.0.1",
     "scripts": {
-        "client": "cd client && PORT=4500 npm run start",
+        "client": "cd client && npm run start",
         "server": "cd server && npm run start",
         "database": "mongod",
         "dev": "concurrently --kill-others-on-fail \"npm run database\" \"npm run server\" \"npm run client\""
