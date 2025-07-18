@@ -29,8 +29,10 @@ const Header = (props: Props) => {
     const [selectedImageIndex, setSelectedImageIndex] = React.useState(getRandomImageIndex())
     const [headerClass, setHeaderClass] = React.useState('')
 
+    const FADE_TIME = 2000
+
     React.useEffect(() => {
-        const interval = setInterval(changeImage, 28000)
+        const interval = setInterval(changeImage, 60_000 - FADE_TIME)
         return () => clearInterval(interval)
     }, [selectedImageIndex])
 
@@ -40,7 +42,7 @@ const Header = (props: Props) => {
         setTimeout(() => {
             setSelectedImageIndex((prevIndex) => (prevIndex + 1) % images.length)
             setHeaderClass('change-in')
-        }, 2000)
+        }, FADE_TIME)
     }
     const headerStyle = {
         backgroundImage: `url(${images[selectedImageIndex].url})`,
